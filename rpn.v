@@ -21,3 +21,9 @@ module rpn(clk, reset, push, pop, sp, full, empty, d_in, d_out);
 			
 endmodule
 
+
+/*
+	Need to make a block diagram!!
+	should stack pointer be input, output, or just an internal signal?
+*/
+
