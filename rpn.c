@@ -1,148 +1,87 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 #include <math.h>
 #include <colour_manak.h>
-
-struct stack
-{
-	int data;
-	struct stack *next;
-};
-
-struct stack *create(struct stack*, int*);
-struct stack *display(struct stack*);
+#include "prototypes.h"
 
 int main(void)
 {
- 	int i, size, input, first, second;
-	struct stack *start = NULL;
+ 	int i;
+    char user_input;
+	double first, second, result, operand;
 
-	start = create(start, &size);
-	start = display(start);
+	struct stack *top = NULL;
 
-	// initiate a push pop thing-a-ma-jig for testing
+    printf(BOLD_MAGENTA);
+    printf("\nPlease begin entering operands and operators.\nCorrect formatting is assumed upon input.\n");
+    printf("Enter the letter e when complete to display the final answer.\n");
 
-	while(1)
-	{
-		printf("enter 1 for PUSH and 2 for POP\n");
-		scanf("%d", &i);
+    do
+    {
+        top = display(top);
+        printf(BOLD_YELLOW);
+        printf("->");
+        scanf("%c", &user_input);
 
-		if(i == 1)
-		{
-			// need to push data onto the stack
-			printf("enter data to push to stack\n");
-			scanf("%d", &input);
+        if(user_input == '+')
+        {
+            first = top->data;
+            top = pop(top);
+            second = top->data;
+            top = pop(top);
 
-			// PUSH FUNCTION GOES HERE
-		}
-		else if(i == 2)
-		{
-			// need to pop data off of the stack and save into a variable
-				// NOTE: after this operation, the data that comes off of the stack should be saved into some variables, but also deleted from the stack. 
-				// because RPN only requires that the two most recent operands be popped off of the stack, have two variables, FIRST and SECOND
+            result = second + first;
 
+            top = push(top, result);
+        }
+        else if(user_input == '-')
+        {
+            first = top->data;
+            top = pop(top);
+            second = top->data;
+            top = pop(top);
 
-		}
-	}	
+            result = second - first;
 
+            top = push(top, result);
+        }
+        else if(user_input == '*')
+        {
+            first = top->data;
+            top = pop(top);
+            second = top->data;
+            top = pop(top);
 
+            result = second * first;
 
+            top = push(top, result);
+        }
+        else if(user_input == '/')
+        {
+            first = top->data;
+            top = pop(top);
+            second = top->data;
+            top = pop(top);
 
+            result = second / first;
 
-
-
-
-
-
-
-	// USE A LINKED LIST!!!!
-		//stack is LIFO structure, LAST IN FIRST OUT
-		// have a variable that records the 'top' of the stack
-
-	// after each operator is entered, the top two operands on the stack
-		// are operated upon, with their solution put on the top of the stack. 
-		// need to put 'x' into the now empty space held by one of the operands
-
-	// if a value appears next in the expression, PUSH the value onto the stack
-	// if an operator appears next, then POP two items from the top of the stack and push the result of the operation on to the stack
+            top = push(top, result);
+        }
+        else
+        {
+            // at this point, it is assumed a number has been entered. convert from char to int. 
+            operand = (double) user_input; //////// this doesnt work
+            top = push(top, operand);
+        }
+    }while(user_input != 'e');
 	
-
-
+    printf("Evaluated expression: %lf\n", top->data);
 
 	return 0;
 }
 
-struct stack *create(struct stack *start, int *size)
-{
-	struct stack *new_node, *ptr;
-	int num, count, value;
 
-	printf("Creating stack from linked list with 100 nodes...\n");
-	*size = 100;
-
-	count = 0;
-	while(count < 100)
-	{
-		// create a new node
-		new_node = (struct stack*)malloc(sizeof(struct stack));
-		
-		// set data to be NULL
-		new_node->data = 0;
-
-		if(start == NULL)
-		{
-		 	// first node! 
-			new_node->next = NULL;
-			start = new_node;
-		}
-		else
-		{
-			ptr = start;
-
-			// go through list that has already been created and then add a new node
-			while(ptr->next != NULL)
-			{
-				ptr = ptr->next;
-			}
-
-			ptr->next = new_node;
-			new_node->next = NULL;
-		}
-
-		count++;
-
-	}
-	
-	return start;
-}
-
-struct stack *display(struct stack *NODES)
-{
-	struct stack *pointer;
-	int flag = 1;
-	pointer = NODES;
-
-	while(pointer != NULL)
-	{
-		if(flag < 0)
-		{
-			printf(BOLD_RED);
-		}
-		else	
-		{
-			printf(BOLD_BLUE);
-		}
-
-		printf("\t %d", pointer->data);
-		pointer = pointer->next;
-		flag *= -1;
-	}
-
-	printf("\n");
-
-	return NODES;
-}
+/*
 
 
 
@@ -151,13 +90,4 @@ struct stack *display(struct stack *NODES)
 
 
 
-
-
-
-
-
-
-
-
-
-
+*/
