@@ -6,9 +6,8 @@
 
 int main(void)
 {
- 	int i;
-    char user_input;
-	double first, second, result, operand;
+    char *ptr;
+	int user_input, i, first, second, result, operand;
 
 	struct stack *top = NULL;
 
@@ -21,7 +20,7 @@ int main(void)
         top = display(top);
         printf(BOLD_YELLOW);
         printf("->");
-        scanf("%c", &user_input);
+        scanf("%d", &user_input);
 
         if(user_input == '+')
         {
@@ -69,8 +68,7 @@ int main(void)
         }
         else
         {
-            // at this point, it is assumed a number has been entered. convert from char to int. 
-            operand = (double) user_input; //////// this doesnt work
+            printf("%lf", operand);
             top = push(top, operand);
         }
     }while(user_input != 'e');

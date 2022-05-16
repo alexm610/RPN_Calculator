@@ -3,11 +3,15 @@
 
 int main()
 {
-    int i;
-    char c;
+    int input;
+    char s;
 
-    scanf("%c", &c);
+    scanf("%d", &input);
 
-    printf("\n%d\n", (int)c);
-    return 0;
+
+    //c = (char)input;
+
+    printf("%c\n", input);
+
+   return 0;
 }
