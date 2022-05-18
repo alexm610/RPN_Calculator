@@ -1,14 +1,17 @@
-module rpn(clk, reset, push, pop, d_in, d_out);
-	// need a stack pointer reg as well!!
-	parameter data_width = 4; // let 4 switches on board be input : will only allow for up to the number 16 to be an operand, but I need some switches for operand input!
-	parameter address_width = 6; // total data spots is 2^6 = 64
+module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
+	input CLOCK_50;
+	input [3:0] KEY;
+	input [7:0] SW;
+	output [7:0] LEDR;
+	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	wire [7:0] data_IN;, data_OUT;
 
-	input clk, reset, push, pop;
-	input [data_width-1:0] d_in;
-	output reg [data_width-1:0] d_out;
+	reg_load_enable #(8) STACK_POINTER_REGISTER (clk, data_IN, KEY[0], data_OUT);
+	multiplexer_2input #(8) SP_Multiplexor (8'b0, (data_OUT + 1), reset, data_IN); 
 
-
-
+	// instantiate the stack
+		// read and write address lines are read from output of stack pointer. 
+	RAM STACK (CLOCK_50, data_OUT[7:0], data_OUT[7:0], ~KEY[0], SW[7:0], LEDR[7:0]);
 			
 endmodule
 

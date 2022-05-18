@@ -9,23 +9,23 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 vdecoder
-Z0 !s110 1652846336
+Z0 !s110 1652859099
 !i10b 1
 !s100 7IfQ:5Gbb6_]1EOMTbZA@3
-IZU^62g8HO^d9@_QVRVGD^3
+IJff;iRz^_i_BaYMBZnI0E2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/Alex Manak/source/repos/RPN_Calculator
 Z3 w1652806101
-Z4 8C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v
-Z5 FC:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v
+Z4 8C:\Users\Alex Manak\source\repos\RPN_Calculator\regfile.v
+Z5 FC:\Users\Alex Manak\source\repos\RPN_Calculator\regfile.v
 L0 59
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1652846336.000000
-Z8 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
+Z7 !s108 1652859099.000000
+Z8 !s107 C:\Users\Alex Manak\source\repos\RPN_Calculator\regfile.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Alex Manak\source\repos\RPN_Calculator\regfile.v|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
@@ -33,7 +33,7 @@ vDFF_Alex
 R0
 !i10b 1
 !s100 T]5Jig;`7UAznEVRD<EIi2
-IOb:7=V8d8TFSE?0bB@HGk3
+IglLM2l6QMf2OA>W5hBgYU3
 R1
 R2
 R3
@@ -55,7 +55,7 @@ vmultiplexer_2input
 R0
 !i10b 1
 !s100 `0P9eRK587GI[AI4P=5[D1
-ISN;[U;D4QhU<7I45=hTA`2
+I26R1TTSQgeWzX3eHO^]Lc0
 R1
 R2
 R3
@@ -76,7 +76,7 @@ vmultiplexer_8input
 R0
 !i10b 1
 !s100 `N_N2n<Jk:f8LWUe?I;8f3
-IfMPB[io2blG49K2Q3oV1:1
+IdJARL57CL5jT53haAz[YL1
 R1
 R2
 R3
@@ -96,11 +96,11 @@ R11
 vRAM
 R0
 !i10b 1
-!s100 :`XA<Sh0P91Ja=SZjh^WG1
-InXNM1PMQcBkLd[0WWEf5R1
+!s100 5DR?4odF11cGVJ9@9nD]<1
+IlC>HfGNZGSNaCbO7;ofR51
 R1
 R2
-w1652846333
+w1652858989
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v
 L0 1
@@ -119,7 +119,7 @@ vreg_load_enable
 R0
 !i10b 1
 !s100 Ojb0JHaHM`cKj:n9W6b3i0
-IdW61R9Lf15Z`m1I9ha7^02
+IaWn?DafWhelmSjMJY]3[K3
 R1
 R2
 R3
@@ -139,11 +139,11 @@ R11
 vrpn
 R0
 !i10b 1
-!s100 1Z3YBg<K=R>ZE1UGk];eK3
-IFfm_bao`IWgoW>J;@9SN83
+!s100 _STaE?5ba3VSk7`zn4FK=2
+IA0F>gGBACk9gK6I8GLb?V2
 R1
 R2
-w1652769116
+w1652859092
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v
 L0 1
