@@ -22,7 +22,7 @@ int main(void)
         printf("->");
         scanf("%d", &user_input);
 
-        if(user_input == '+')
+        if(user_input == 43)
         {
             first = top->data;
             top = pop(top);
@@ -33,7 +33,7 @@ int main(void)
 
             top = push(top, result);
         }
-        else if(user_input == '-')
+        else if(user_input == 45)
         {
             first = top->data;
             top = pop(top);
@@ -44,7 +44,7 @@ int main(void)
 
             top = push(top, result);
         }
-        else if(user_input == '*')
+        else if(user_input == 42)
         {
             first = top->data;
             top = pop(top);
@@ -55,7 +55,7 @@ int main(void)
 
             top = push(top, result);
         }
-        else if(user_input == '/')
+        else if(user_input == 76)
         {
             first = top->data;
             top = pop(top);
