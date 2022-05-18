@@ -1,5 +1,5 @@
 module RAM (clk, read_address, write_address, write, din, dout);
-    parameter data_width = 8; 
+    parameter data_width = 16; 
     parameter addr_width = 8;
     parameter filename = "sw_led.txt";
 

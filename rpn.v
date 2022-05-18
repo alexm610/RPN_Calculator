@@ -1,11 +1,10 @@
-module rpn(clk, reset, push, pop, d_in, d_out);
-	// need a stack pointer reg as well!!
-	parameter data_width = 4; // let 4 switches on board be input : will only allow for up to the number 16 to be an operand, but I need some switches for operand input!
-	parameter address_width = 6; // total data spots is 2^6 = 64
-
-	input clk, reset, push, pop;
-	input [data_width-1:0] d_in;
-	output reg [data_width-1:0] d_out;
+module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
+	input CLOCK_50;
+	input [3:0] KEY;
+	input [9:0] SW;
+	output [9:0] LEDR;
+	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	
 
 
 
