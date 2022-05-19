@@ -1,4 +1,3 @@
-
 module reg_load_enable(clk, in, enable, out);
     parameter k = 16;
     input clk, enable;

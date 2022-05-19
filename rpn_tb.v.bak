@@ -40,7 +40,6 @@ module rpn_tb;
 			
 		#100;
 		KEY[0] = 0;
-		#100;
 		if (~error) $display("Calculator probably works.");
 		$stop;
 	end
