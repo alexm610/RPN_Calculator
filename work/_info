@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 vdecoder
-Z0 !s110 1652936451
+Z0 !s110 1653007059
 !i10b 1
 !s100 F^fBZE9[mh]^GBd^kUa0F3
 IKmz@K9>`2elV;CBHNR_lG3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1652936451.000000
+Z7 !s108 1653007059.000000
 Z8 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
 !i113 1
@@ -94,23 +94,23 @@ R9
 R10
 R11
 vRAM
-R0
+Z12 !s110 1653007060
 !i10b 1
 !s100 Cz=9kd^B;Zo^TFmhKT0fc2
-I8BcQKahYd<bHCJFLokTFn0
+IcCNV<D`SQNJ8k0N^A@M180
 R1
 R2
 w1652928935
-8C:\Users\Alex Manak\source\repos\RPN_Calculator\ram.v
-FC:\Users\Alex Manak\source\repos\RPN_Calculator\ram.v
+8C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v
+FC:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v
 L0 1
 R6
 r1
 !s85 0
 31
-R7
-!s107 C:\Users\Alex Manak\source\repos\RPN_Calculator\ram.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Alex Manak\source\repos\RPN_Calculator\ram.v|
+Z13 !s108 1653007060.000000
+!s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v|
 !i113 1
 R10
 R11
@@ -137,44 +137,44 @@ R9
 R10
 R11
 vrpn
-!s110 1652934555
+R0
 !i10b 1
-!s100 f]UEk=neT4Mm5B8k^^DLY3
-IK[T_n_WL?Ef6=CYAhUj>m3
+!s100 g`K2CK>g6flj7`mh`Wcoi0
+IjoaJl=fnM;aih:geSeU<93
 R1
 R2
-w1652934550
+w1653006972
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v
-L0 1
+L0 5
 R6
 r1
 !s85 0
 31
-!s108 1652934554.000000
+R7
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v|
 !i113 1
 R10
 R11
 vrpn_tb
-R0
+R12
 !i10b 1
-!s100 zf^WKL8_09KSkcOlE6[mD0
-IeihjL]SKBoEOQahM4dc=j2
+!s100 ?KZ]XF`_3Y`YKheX9;VG=2
+IF6hBQ`g45Qf]<WaH8IlkF1
 R1
 R2
-w1652932909
-8C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v
-FC:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v
+w1653007055
+8C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn_tb.v
+FC:\Users\Alex Manak\source\repos\RPN_Calculator\rpn_tb.v
 L0 1
 R6
 r1
 !s85 0
 31
-R7
-!s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v|
+R13
+!s107 C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn_tb.v|
 !i113 1
 R10
 R11
