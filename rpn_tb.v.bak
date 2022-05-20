@@ -67,6 +67,12 @@ module rpn_tb;
     		SW[7] = 1'b0;
     		SW[8] = 1'b0;
     		SW[9] = 1'b0;
+			
+		#100;
+
+		KEY[1] = 1'b0;
+
+		#100;
 
 		if (~error) $display("Calculator probably works.");
 		$stop;

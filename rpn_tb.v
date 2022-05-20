@@ -48,8 +48,8 @@ module rpn_tb;
     		SW[1] = 1'b1;
     		SW[2] = 1'b1;
     		SW[3] = 1'b1;
-    		SW[4] = 1'b1;
-    		SW[5] = 1'b1;
+    		SW[4] = 1'b0;
+    		SW[5] = 1'b0;
     		SW[6] = 1'b1;
     		SW[7] = 1'b1;
     		SW[8] = 1'b0;
@@ -58,16 +58,20 @@ module rpn_tb;
 		#100;
 
 		SW[0] = 1'b0;
-    		SW[1] = 1'b0;
+    		SW[1] = 1'b1;
     		SW[2] = 1'b0;
-    		SW[3] = 1'b0;
+    		SW[3] = 1'b1;
     		SW[4] = 1'b0;
-    		SW[5] = 1'b0;
+    		SW[5] = 1'b1;
     		SW[6] = 1'b0;
-    		SW[7] = 1'b0;
+    		SW[7] = 1'b1;
     		SW[8] = 1'b0;
     		SW[9] = 1'b0;
 			
+		#100;
+
+		KEY[1] = 1'b0;
+
 		#100;
 
 		if (~error) $display("Calculator probably works.");
