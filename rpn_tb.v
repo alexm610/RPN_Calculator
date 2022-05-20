@@ -43,34 +43,12 @@ module rpn_tb;
 		#10;
 		KEY[0] = 1;
 
-		// set input value on the switches 
-		SW[0] = 1'b1;
-    		SW[1] = 1'b1;
-    		SW[2] = 1'b1;
-    		SW[3] = 1'b1;
-    		SW[4] = 1'b0;
-    		SW[5] = 1'b0;
-    		SW[6] = 1'b1;
-    		SW[7] = 1'b1;
-    		SW[8] = 1'b0;
-    		SW[9] = 1'b0;
-		
-		#100;
+		#50;
 
-		SW[0] = 1'b0;
-    		SW[1] = 1'b1;
-    		SW[2] = 1'b0;
-    		SW[3] = 1'b1;
-    		SW[4] = 1'b0;
-    		SW[5] = 1'b1;
-    		SW[6] = 1'b0;
-    		SW[7] = 1'b1;
-    		SW[8] = 1'b0;
-    		SW[9] = 1'b0;
-			
-		#100;
-
-		KEY[1] = 1'b0;
+		// trigger reset and keep it high
+		KEY[1] = 0;
+		#50;
+		KEY[1] = 1;
 
 		#100;
 

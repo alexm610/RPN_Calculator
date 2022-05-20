@@ -1,35 +1,17 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
+add wave -noupdate -divider {TOP LEVEL}
 add wave -noupdate /rpn_tb/CLOCK_50
 add wave -noupdate {/rpn_tb/KEY[1]}
 add wave -noupdate {/rpn_tb/KEY[0]}
 add wave -noupdate -divider INTERNAL
-add wave -noupdate /rpn_tb/error
 add wave -noupdate /rpn_tb/DUT/write
 add wave -noupdate /rpn_tb/DUT/current_state
 add wave -noupdate /rpn_tb/DUT/tri_enable
 add wave -noupdate -divider SWITCHES
-add wave -noupdate {/rpn_tb/SW[9]}
-add wave -noupdate {/rpn_tb/SW[8]}
-add wave -noupdate {/rpn_tb/SW[7]}
-add wave -noupdate {/rpn_tb/SW[6]}
-add wave -noupdate {/rpn_tb/SW[5]}
-add wave -noupdate {/rpn_tb/SW[4]}
-add wave -noupdate {/rpn_tb/SW[3]}
-add wave -noupdate {/rpn_tb/SW[2]}
-add wave -noupdate {/rpn_tb/SW[1]}
-add wave -noupdate {/rpn_tb/SW[0]}
+add wave -noupdate /rpn_tb/DUT/SW
 add wave -noupdate -divider LED
-add wave -noupdate {/rpn_tb/LEDR[9]}
-add wave -noupdate {/rpn_tb/LEDR[8]}
-add wave -noupdate {/rpn_tb/LEDR[7]}
-add wave -noupdate {/rpn_tb/LEDR[6]}
-add wave -noupdate {/rpn_tb/LEDR[5]}
-add wave -noupdate {/rpn_tb/LEDR[4]}
-add wave -noupdate {/rpn_tb/LEDR[3]}
-add wave -noupdate {/rpn_tb/LEDR[2]}
-add wave -noupdate {/rpn_tb/LEDR[1]}
-add wave -noupdate {/rpn_tb/LEDR[0]}
+add wave -noupdate /rpn_tb/DUT/LEDR
 add wave -noupdate -divider STACK
 add wave -noupdate -divider {SP Register}
 add wave -noupdate /rpn_tb/DUT/STACK_POINTER_REGISTER/clk
@@ -54,4 +36,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {257 ps} {429 ps}
+WaveRestoreZoom {0 ps} {344 ps}
