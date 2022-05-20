@@ -48,6 +48,11 @@ module rpn_tb;
 		// trigger reset and keep it high
 		KEY[1] = 0;
 		#50;
+		KEY[1] = 1;
+
+		#50;
+
+
 
 		if (~error) $display("Calculator probably works.");
 		$stop;

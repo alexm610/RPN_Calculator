@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu May 19 17:38:35 2022
+Analysis & Synthesis Status : Successful - Thu May 19 22:42:04 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : rpn
 Top-level Entity Name : rpn
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 10
+Total registers : 12
 Total pins : 67
 Total virtual pins : 0
 Total block memory bits : 0

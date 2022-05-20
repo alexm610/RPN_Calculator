@@ -1,5 +1,5 @@
 Flow report for rpn
-Thu May 19 17:39:44 2022
+Thu May 19 22:43:18 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu May 19 17:39:35 2022       ;
+; Flow Status                     ; Successful - Thu May 19 22:43:09 2022       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; rpn                                         ;
 ; Top-level Entity Name           ; rpn                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 4 / 32,070 ( < 1 % )                        ;
-; Total registers                 ; 10                                          ;
+; Logic utilization (in ALMs)     ; 5 / 32,070 ( < 1 % )                        ;
+; Total registers                 ; 12                                          ;
 ; Total pins                      ; 67 / 457 ( 15 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/19/2022 17:38:17 ;
+; Start date & time ; 05/19/2022 22:41:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rpn                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 218472131518149.165300709603396        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 218472131518149.165302530412088        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -93,11 +93,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4798 MB             ; 00:00:39                           ;
-; Fitter               ; 00:00:48     ; 1.0                     ; 6216 MB             ; 00:01:10                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4830 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.0                     ; 5082 MB             ; 00:00:08                           ;
-; Total                ; 00:01:25     ; --                      ; --                  ; 00:02:05                           ;
+; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4796 MB             ; 00:00:40                           ;
+; Fitter               ; 00:00:52     ; 1.0                     ; 6235 MB             ; 00:01:13                           ;
+; Assembler            ; 00:00:10     ; 1.0                     ; 4828 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.0                     ; 5086 MB             ; 00:00:08                           ;
+; Total                ; 00:01:30     ; --                      ; --                  ; 00:02:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
