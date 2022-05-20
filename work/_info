@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 vdecoder
-Z0 !s110 1653025293
+Z0 !s110 1653028184
 !i10b 1
 !s100 F^fBZE9[mh]^GBd^kUa0F3
 IKmz@K9>`2elV;CBHNR_lG3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1653025293.000000
+Z7 !s108 1653028184.000000
 Z8 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
 !i113 1
@@ -94,7 +94,7 @@ R9
 R10
 R11
 vRAM
-Z12 !s110 1653025294
+R0
 !i10b 1
 !s100 Cz=9kd^B;Zo^TFmhKT0fc2
 IcCNV<D`SQNJ8k0N^A@M180
@@ -139,11 +139,11 @@ R11
 vrpn
 R0
 !i10b 1
-!s100 gG97=Xb;f^R21_@[R8Dzn2
-IgBC19e7nE<:Gea5[6j@Qd0
+!s100 O68jTiMM[AzJ4_feKPNH^2
+I2WWZh[XUPmmHJYNd>o5a20
 R1
 R2
-w1653023169
+w1653028180
 8C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn.v
 FC:\Users\Alex Manak\source\repos\RPN_Calculator\rpn.v
 L0 6
@@ -158,7 +158,7 @@ R7
 R10
 R11
 vrpn_tb
-R12
+!s110 1653028185
 !i10b 1
 !s100 <<?hFQA_mL^zng]KXS2eT0
 I1WlfoHZIhX?9Z?GGLYSWX3
@@ -172,7 +172,7 @@ R6
 r1
 !s85 0
 31
-!s108 1653025294.000000
+R7
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v|
 !i113 1

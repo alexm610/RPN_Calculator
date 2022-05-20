@@ -9,13 +9,20 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	input [9:0] SW;
 	output [9:0] LEDR;
 	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-	wire [7:0] data_IN, data_OUT;
-	reg write, tri_enable;
+	wire [7:0] data_IN, data_OUT, SP, into_SP_reg;
+	reg write, tri_enable, reset_SP, load_SP;
 	reg [3:0] current_state;
 
-	reg_load_enable #(8) STACK_POINTER_REGISTER (CLOCK_50, data_IN, write, LEDR[7:0]); 
+	// this register is used to write data to
+		// user enters data into this register. 
+		// hardware then goes through FSM states to push data onto memory. 
+	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write, LEDR[7:0]);
 
-	assign data_IN = tri_enable ? SW[7:0] : 16'b0;	
+	//reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, load_SP, SP);
+	//assign into_SP_reg = reset_SP ? 8'b0 : (1'b1 + SP);
+ 
+	assign data_IN = tri_enable ? SW[7:0] : 8'b0;	
+
 	assign LEDR[8] = 1'b0;
 	assign LEDR[9] = 1'b0;
 
