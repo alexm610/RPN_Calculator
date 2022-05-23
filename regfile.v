@@ -24,27 +24,6 @@ module multiplexer_2input(a1, a0, s, out); // this multiplexer is to be used ONL
     end
 endmodule
 
-module multiplexer_8input(a7, a6, a5, a4, a3, a2, a1, a0, s, out); // this multiplexer is the one that takes the register files as input, and outputs data_out
-    parameter signal_width = 1;
-    input [signal_width-1:0] a7, a6, a5, a4, a3, a2, a1, a0;
-    input [7:0] s; // select signal here, is 8 bits, since there are 8 inputs --> select is a one-hot signal
-    output reg [signal_width-1:0] out;
-
-    always @(*) begin // select signal is one-hot
-        case(s)
-            8'b00000001: out = a0;
-            8'b00000010: out = a1;
-            8'b00000100: out = a2;
-            8'b00001000: out = a3;
-            8'b00010000: out = a4;
-            8'b00100000: out = a5;
-            8'b01000000: out = a6;
-            8'b10000000: out = a7;
-            default: out = {signal_width{1'bx}};
-        endcase
-    end
-endmodule
-
 module DFF_Alex(clk, in, out);
     parameter n = 1;
     input clk;
@@ -53,13 +32,4 @@ module DFF_Alex(clk, in, out);
 
     always @(posedge clk)
         out = in; 
-endmodule
-
-module decoder(a, b);
-    parameter n = 3;
-    parameter m = 8;
-    input [n-1:0] a;
-    output [m-1:0] b;
-
-    wire [m-1:0] b = 1 << a;
 endmodule

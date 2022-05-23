@@ -1,4 +1,3 @@
-
 module reg_load_enable(clk, in, enable, out);
     parameter k = 16;
     input clk, enable;
@@ -24,7 +23,7 @@ module multiplexer_2input(a1, a0, s, out); // this multiplexer is to be used ONL
         endcase
     end
 endmodule
-
+/*
 module multiplexer_8input(a7, a6, a5, a4, a3, a2, a1, a0, s, out); // this multiplexer is the one that takes the register files as input, and outputs data_out
     parameter signal_width = 1;
     input [signal_width-1:0] a7, a6, a5, a4, a3, a2, a1, a0;
@@ -45,7 +44,7 @@ module multiplexer_8input(a7, a6, a5, a4, a3, a2, a1, a0, s, out); // this multi
         endcase
     end
 endmodule
-
+*/
 module DFF_Alex(clk, in, out);
     parameter n = 1;
     input clk;
@@ -55,7 +54,7 @@ module DFF_Alex(clk, in, out);
     always @(posedge clk)
         out = in; 
 endmodule
-
+/*
 module decoder(a, b);
     parameter n = 3;
     parameter m = 8;
@@ -64,3 +63,4 @@ module decoder(a, b);
 
     wire [m-1:0] b = 1 << a;
 endmodule
+*/

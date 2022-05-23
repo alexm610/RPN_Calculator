@@ -1,5 +1,5 @@
 Fitter report for rpn
-Thu May 19 22:42:57 2022
+Sat May 21 00:37:46 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu May 19 22:42:57 2022       ;
+; Fitter Status                   ; Successful - Sat May 21 00:37:46 2022       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; rpn                                         ;
 ; Top-level Entity Name           ; rpn                                         ;
@@ -1686,15 +1686,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------+-------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                             ;
-+---------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                  ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name     ; Library Name ;
-+---------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------+-----------------+--------------+
-; |rpn                                        ; 4.5 (2.5)            ; 6.5 (2.5)                        ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 12 (4)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 67   ; 0            ; |rpn                                                      ; rpn             ; work         ;
-;    |reg_load_enable:STACK_POINTER_REGISTER| ; 2.0 (0.0)            ; 4.0 (0.0)                        ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rpn|reg_load_enable:STACK_POINTER_REGISTER               ; reg_load_enable ; work         ;
-;       |DFF_Alex:DFF0|                       ; 2.0 (2.0)            ; 4.0 (4.0)                        ; 2.0 (2.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (8)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rpn|reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0 ; DFF_Alex        ; work         ;
-+---------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------+-----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                             ;
++-------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node          ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Entity Name     ; Library Name ;
++-------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------+-----------------+--------------+
+; |rpn                                ; 4.5 (2.5)            ; 6.5 (2.5)                        ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 12 (4)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 67   ; 0            ; |rpn                                              ; rpn             ; work         ;
+;    |reg_load_enable:DUMMY_REGISTER| ; 2.0 (0.0)            ; 4.0 (0.0)                        ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rpn|reg_load_enable:DUMMY_REGISTER               ; reg_load_enable ; work         ;
+;       |DFF_Alex:DFF0|               ; 2.0 (2.0)            ; 4.0 (4.0)                        ; 2.0 (2.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (8)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rpn|reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0 ; DFF_Alex        ; work         ;
++-------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1773,41 +1773,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                                          ;
-+---------------------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                                       ; Pad To Core Index ; Setting ;
-+---------------------------------------------------------------------------+-------------------+---------+
-; KEY[2]                                                                    ;                   ;         ;
-; KEY[3]                                                                    ;                   ;         ;
-; SW[8]                                                                     ;                   ;         ;
-; SW[9]                                                                     ;                   ;         ;
-; CLOCK_50                                                                  ;                   ;         ;
-; SW[0]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[0]~feeder ; 0                 ; 0       ;
-; SW[1]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[1]~feeder ; 0                 ; 0       ;
-; SW[2]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[2]~feeder ; 0                 ; 0       ;
-; SW[3]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[3]~feeder ; 0                 ; 0       ;
-; SW[4]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[4]        ; 0                 ; 0       ;
-; SW[5]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[5]        ; 1                 ; 0       ;
-; SW[6]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[6]        ; 0                 ; 0       ;
-; SW[7]                                                                     ;                   ;         ;
-;      - reg_load_enable:STACK_POINTER_REGISTER|DFF_Alex:DFF0|out[7]~feeder ; 0                 ; 0       ;
-; KEY[1]                                                                    ;                   ;         ;
-;      - write                                                              ; 0                 ; 0       ;
-;      - tri_enable                                                         ; 0                 ; 0       ;
-;      - current_state~0                                                    ; 0                 ; 0       ;
-;      - current_state~1                                                    ; 0                 ; 0       ;
-; KEY[0]                                                                    ;                   ;         ;
-;      - Selector2~0                                                        ; 0                 ; 0       ;
-;      - current_state~0                                                    ; 0                 ; 0       ;
-+---------------------------------------------------------------------------+-------------------+---------+
++-------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                  ;
++-------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                               ; Pad To Core Index ; Setting ;
++-------------------------------------------------------------------+-------------------+---------+
+; KEY[2]                                                            ;                   ;         ;
+; KEY[3]                                                            ;                   ;         ;
+; SW[8]                                                             ;                   ;         ;
+; SW[9]                                                             ;                   ;         ;
+; CLOCK_50                                                          ;                   ;         ;
+; SW[0]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[0]~feeder ; 0                 ; 0       ;
+; SW[1]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[1]~feeder ; 0                 ; 0       ;
+; SW[2]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[2]~feeder ; 0                 ; 0       ;
+; SW[3]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[3]~feeder ; 0                 ; 0       ;
+; SW[4]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[4]        ; 0                 ; 0       ;
+; SW[5]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[5]        ; 1                 ; 0       ;
+; SW[6]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[6]        ; 0                 ; 0       ;
+; SW[7]                                                             ;                   ;         ;
+;      - reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0|out[7]~feeder ; 0                 ; 0       ;
+; KEY[1]                                                            ;                   ;         ;
+;      - write                                                      ; 0                 ; 0       ;
+;      - tri_enable                                                 ; 0                 ; 0       ;
+;      - current_state~0                                            ; 0                 ; 0       ;
+;      - current_state~1                                            ; 0                 ; 0       ;
+; KEY[0]                                                            ;                   ;         ;
+;      - Selector2~0                                                ; 0                 ; 0       ;
+;      - current_state~0                                            ; 0                 ; 0       ;
++-------------------------------------------------------------------+-------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -2332,19 +2332,19 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.39 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Alex Manak/source/repos/RPN_Calculator/output_files/rpn.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 197 warnings
-    Info: Peak virtual memory: 6235 megabytes
-    Info: Processing ended: Thu May 19 22:42:58 2022
-    Info: Elapsed time: 00:00:53
-    Info: Total CPU time (on all processors): 00:01:14
+    Info: Peak virtual memory: 6223 megabytes
+    Info: Processing ended: Sat May 21 00:37:46 2022
+    Info: Elapsed time: 00:00:51
+    Info: Total CPU time (on all processors): 00:01:13
 
 
 +----------------------------+
