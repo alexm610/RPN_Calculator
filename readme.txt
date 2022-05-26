@@ -15,3 +15,7 @@ MAY 25, 2022
 - LEDs are written to directly from the data held in the dummy register. 
 - Memory block has been instantiated; tonight I will attempt to connect RAM module so data in dummy register is directly written to RAM in 
 	position defined by the data held in stack pointer register. 
+END OF NIGHT:
+- Stack pointer now starts at zero and increments upon KEY[0] high; earlier it started at zero, then went to 1 upon KEY[0], but then wrote to position 1
+	of RAM for writing data in dummy register to memory. 
+- For next time: remove the dummy register, and write directly to RAM. 
