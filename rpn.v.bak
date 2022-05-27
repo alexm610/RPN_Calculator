@@ -5,7 +5,6 @@
 `define S_WRITE2	4'b0100
 `define S_WRITE3	4'b0101
 
-
 //// Seven segment display definitions ////
 `define ZERO  		7'b1000000
 `define ONE   		7'b1111001
@@ -68,8 +67,8 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 			case (current_state)
 				`S_ZERO: {write, tri_enable} = {1'b0, 1'b0};
 				`S_WAIT: {write, tri_enable, memory_write} = {1'b0, 1'b0, 1'b0};
-				`S_WRITE1: {write, tri_enable} = {1'b1, 1'b1};
-				`S_WRITE2: {write, memory_write} = {1'b0, 1'b1};
+				`S_WRITE1: {write, tri_enable} = {1'b0, 1'b1};
+				`S_WRITE2: {write, memory_write} = {1'b1, 1'b1};
 				`S_WRITE_ZEROS: {write, tri_enable} = {1'b1, 1'b0};	
 			endcase	
 		end

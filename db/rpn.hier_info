@@ -5,6 +5,7 @@ KEY[1] => current_state.OUTPUTSELECT
 KEY[1] => current_state.OUTPUTSELECT
 KEY[1] => current_state.OUTPUTSELECT
 KEY[1] => write.OUTPUTSELECT
+KEY[1] => memory_write.OUTPUTSELECT
 KEY[1] => tri_enable.ENA
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~

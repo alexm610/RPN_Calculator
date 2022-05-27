@@ -5,7 +5,6 @@
 `define S_WRITE2	4'b0100
 `define S_WRITE3	4'b0101
 
-
 //// Seven segment display definitions ////
 `define ZERO  		7'b1000000
 `define ONE   		7'b1111001
@@ -32,9 +31,6 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	reg write, tri_enable, reset_SP, load_SP, memory_write;
 	reg [3:0] current_state;
 
-	// this register is used to write data to memory
-		// user enters data into this register. 
-		// hardware then goes through FSM states to push data onto memory. 
 	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write, output_line);
 	RAM STACK (CLOCK_50, SP, SP, memory_write, output_line, memory_out); 
 	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write, SP);
