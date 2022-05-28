@@ -1,11 +1,3 @@
-// State machine definitions
-`define S_WAIT		4'b0000
-`define S_WRITE1	4'b0001
-`define S_WRITE_ZEROS	4'b0010
-`define S_ZERO		4'b0011
-`define S_WRITE2	4'b0100
-`define S_WRITE3	4'b0101
-
 // Seven segment display definitions 
 `define ZERO  		7'b1000000
 `define ONE   		7'b1111001
@@ -22,6 +14,14 @@
 `define o     		7'b0100011
 `define OFF   		7'b1111111
 
+// State machine definitions
+`define S_WAIT		4'b0000
+`define S_WRITE1	4'b0001
+`define S_WRITE_ZEROS	4'b0010
+`define S_ZERO		4'b0011
+`define S_WRITE2	4'b0100
+`define S_WRITE3	4'b0101
+
 module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	input CLOCK_50;
 	input [3:0] KEY;
@@ -31,10 +31,10 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	wire [7:0] data_IN, data_OUT, SP, into_SP_reg, output_line, memory_out;
 	reg write_dummy, tri_enable, write_SP, write_memory;
 	reg [3:0] current_state;
-
+	
+	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write_SP, SP);
 	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write_dummy, output_line);
 	RAM STACK (CLOCK_50, SP, SP, write_memory, output_line, memory_out); 
-	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write_SP, SP);
 
 	assign data_IN = tri_enable ? SW[7:0] : 8'b0;	
 	assign into_SP_reg = tri_enable ? (1'b1 + SP) : 8'b00000000;
@@ -64,15 +64,14 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 
 			case (current_state)
 				`S_ZERO: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
+				`S_WRITE_ZEROS: {write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b1, 1'b0, 1'b0};
 				`S_WAIT: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
 				`S_WRITE1: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b1, 1'b0, 1'b0};
-				`S_WRITE2: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b1, 1'b0, 1'b0};
-				`S_WRITE_ZEROS: {write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b0, 1'b0, 1'b1};	
+				`S_WRITE2: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b1, 1'b0, 1'b0};	
 			endcase	
 		end
 	end
 endmodule
-
 
 
 

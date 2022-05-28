@@ -27,6 +27,11 @@ MAY 26, 2022
 MAY 28, 2022
 	- I was wrong, although the stack pointer writes data to first position in RAM on start, upon reset it writes to second position. 
 	- Tonight, I will focus on stack pointer sending data to correct position. 
-	- Update: calculator no longer works. Have renamed and added another write signal for the SP register. Shouldn't take long to restore
+	- End of the night: calculator no longer works. Have renamed and added another write signal for the SP register. Shouldn't take long to restore
 		basic functionality. 
-	
+	- Later in the day: starting up again, going to get reset behaviour to work again. This includes first writing zeros to the dummy register, THEN 
+		updating the SP
+	- Seems to work great now: upon reset button, dummy register has zero written to it, and stack pointer is set to zero as well. Upon enter button, 
+		data is written to the dummy register, and then to memory, and then SP is updated. Reset works after enter button has been pressed 
+		several times
+	- Have created an ALU module, not connected to anything yet though. 
