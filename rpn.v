@@ -1,3 +1,4 @@
+// State machine definitions
 `define S_WAIT		4'b0000
 `define S_WRITE1	4'b0001
 `define S_WRITE_ZEROS	4'b0010
@@ -5,7 +6,7 @@
 `define S_WRITE2	4'b0100
 `define S_WRITE3	4'b0101
 
-//// Seven segment display definitions ////
+// Seven segment display definitions 
 `define ZERO  		7'b1000000
 `define ONE   		7'b1111001
 `define TWO   		7'b0100100
@@ -28,12 +29,12 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	output [9:0] LEDR;
 	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 	wire [7:0] data_IN, data_OUT, SP, into_SP_reg, output_line, memory_out;
-	reg write, tri_enable, reset_SP, load_SP, memory_write;
+	reg write_dummy, tri_enable, write_SP, write_memory;
 	reg [3:0] current_state;
 
-	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write, output_line);
-	RAM STACK (CLOCK_50, SP, SP, memory_write, output_line, memory_out); 
-	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write, SP);
+	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write_dummy, output_line);
+	RAM STACK (CLOCK_50, SP, SP, write_memory, output_line, memory_out); 
+	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write_SP, SP);
 
 	assign data_IN = tri_enable ? SW[7:0] : 8'b0;	
 	assign into_SP_reg = tri_enable ? (1'b1 + SP) : 8'b00000000;
@@ -53,25 +54,24 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 			current_state = `S_ZERO;
 		end else begin
 			casex ({current_state, ~KEY[0]})
-				{`S_ZERO, 1'bx}: current_state = `S_WRITE_ZEROS;
-				{`S_WAIT, 1'b1}: current_state = `S_WRITE1;
-				{`S_WAIT, 1'b0}: current_state = `S_WAIT;
-				{`S_WRITE1, 1'bx}: current_state = `S_WRITE2;
-				{`S_WRITE2, 1'bx}: current_state = `S_WAIT;
+				{`S_ZERO, 1'bx}: 	current_state = `S_WRITE_ZEROS;
 				{`S_WRITE_ZEROS, 1'bx}: current_state = `S_WAIT;
+				{`S_WAIT, 1'b0}: 	current_state = `S_WAIT;
+				{`S_WAIT, 1'b1}: 	current_state = `S_WRITE1;
+				{`S_WRITE1, 1'bx}: 	current_state = `S_WRITE2;
+				{`S_WRITE2, 1'bx}: 	current_state = `S_WAIT;
 			endcase
 
 			case (current_state)
-				`S_ZERO: {write, tri_enable} = {1'b0, 1'b0};
-				`S_WAIT: {write, tri_enable, memory_write} = {1'b0, 1'b0, 1'b0};
-				`S_WRITE1: {write, tri_enable} = {1'b0, 1'b1};
-				`S_WRITE2: {write, memory_write} = {1'b1, 1'b1};
-				`S_WRITE_ZEROS: {write, tri_enable} = {1'b1, 1'b0};	
+				`S_ZERO: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
+				`S_WAIT: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
+				`S_WRITE1: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b1, 1'b0, 1'b0};
+				`S_WRITE2: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b1, 1'b0, 1'b0};
+				`S_WRITE_ZEROS: {write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b0, 1'b0, 1'b1};	
 			endcase	
 		end
 	end
 endmodule
-
 
 
 

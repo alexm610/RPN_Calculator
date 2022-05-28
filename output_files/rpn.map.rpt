@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rpn
-Thu May 26 15:24:50 2022
+Sat May 28 00:23:55 2022
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -51,7 +51,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 26 15:24:50 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat May 28 00:23:55 2022       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; rpn                                         ;
 ; Top-level Entity Name           ; rpn                                         ;
@@ -367,12 +367,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu May 26 15:24:29 2022
+    Info: Processing started: Sat May 28 00:23:27 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RPN_Calculator -c rpn
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file rpn.v
-    Info (12023): Found entity 1: rpn File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 25
+    Info (12023): Found entity 1: rpn File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 24
 Info (12021): Found 3 design units, including 3 entities, in source file regfile.v
     Info (12023): Found entity 1: reg_load_enable File: C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v Line: 1
     Info (12023): Found entity 2: multiplexer_2input File: C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v Line: 12
@@ -380,71 +380,71 @@ Info (12021): Found 3 design units, including 3 entities, in source file regfile
 Info (12021): Found 1 design units, including 1 entities, in source file ram.v
     Info (12023): Found entity 1: RAM File: C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v Line: 1
 Info (12127): Elaborating entity "rpn" for the top level hierarchy
-Info (12128): Elaborating entity "reg_load_enable" for hierarchy "reg_load_enable:DUMMY_REGISTER" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 38
+Info (12128): Elaborating entity "reg_load_enable" for hierarchy "reg_load_enable:DUMMY_REGISTER" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 34
 Info (12128): Elaborating entity "DFF_Alex" for hierarchy "reg_load_enable:DUMMY_REGISTER|DFF_Alex:DFF0" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v Line: 8
 Info (12128): Elaborating entity "multiplexer_2input" for hierarchy "reg_load_enable:DUMMY_REGISTER|multiplexer_2input:MUX0" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v Line: 9
-Info (12128): Elaborating entity "RAM" for hierarchy "RAM:STACK" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 39
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:STACK" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 35
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 30
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 28
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 28
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 29
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 27
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 27
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 28
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 28
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 26
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 26
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 27
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v Line: 27
 Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 14 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
     Info: Peak virtual memory: 4807 megabytes
-    Info: Processing ended: Thu May 26 15:24:50 2022
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Processing ended: Sat May 28 00:23:55 2022
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:44
 
 

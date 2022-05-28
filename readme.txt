@@ -23,4 +23,10 @@ MAY 25, 2022
 
 MAY 26, 2022
 	- Am going to attempt to get writing to RAM to work with the dummy register.
+
+MAY 28, 2022
+	- I was wrong, although the stack pointer writes data to first position in RAM on start, upon reset it writes to second position. 
+	- Tonight, I will focus on stack pointer sending data to correct position. 
+	- Update: calculator no longer works. Have renamed and added another write signal for the SP register. Shouldn't take long to restore
+		basic functionality. 
 	

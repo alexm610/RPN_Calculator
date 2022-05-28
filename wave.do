@@ -5,12 +5,14 @@ add wave -noupdate /rpn_tb/CLOCK_50
 add wave -noupdate {/rpn_tb/KEY[1]}
 add wave -noupdate {/rpn_tb/KEY[0]}
 add wave -noupdate -divider INTERNAL
-add wave -noupdate /rpn_tb/DUT/write
 add wave -noupdate /rpn_tb/DUT/current_state
 add wave -noupdate /rpn_tb/DUT/tri_enable
+add wave -noupdate /rpn_tb/DUT/write_dummy
+add wave -noupdate /rpn_tb/DUT/write_memory
+add wave -noupdate /rpn_tb/DUT/write_SP
 add wave -noupdate -divider SWITCHES
 add wave -noupdate /rpn_tb/DUT/SW
-add wave -noupdate -divider LED
+add wave -noupdate -divider LEDs
 add wave -noupdate /rpn_tb/DUT/LEDR
 add wave -noupdate -divider {Dummy Register}
 add wave -noupdate /rpn_tb/DUT/DUMMY_REGISTER/enable
@@ -47,7 +49,7 @@ add wave -noupdate {/rpn_tb/DUT/STACK/mem[2]}
 add wave -noupdate {/rpn_tb/DUT/STACK/mem[1]}
 add wave -noupdate {/rpn_tb/DUT/STACK/mem[0]}
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {24 ps} 0}
+WaveRestoreCursors {{Cursor 1} {628 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 325
 configure wave -valuecolwidth 139
@@ -63,4 +65,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {344 ps}
+WaveRestoreZoom {594 ps} {938 ps}

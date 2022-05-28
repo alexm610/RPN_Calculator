@@ -32,7 +32,7 @@ module rpn_tb;
     		SW[4] = 1'b0;
     		SW[5] = 1'b1;
     		SW[6] = 1'b0;
-    		SW[7] = 1'b0;
+    		SW[7] = 1'b1;
     		SW[8] = 1'b0;
     		SW[9] = 1'b0;
 		
@@ -45,58 +45,9 @@ module rpn_tb;
 
 		#50;
 
-		// trigger reset
-		KEY[1] = 0;
-		#50;
-		KEY[1] = 1;
-
-		#50;
-
-		KEY[0] = 0;
-		#10;
-		KEY[0] = 1;
-
-		#50;
-
-		KEY[0] = 0;
-		#10;
-		KEY[0] = 1;
-
-		#50;
-
-		KEY[0] = 0;
-		#10;
-		KEY[0] = 1;
-
-		#50;
-
-
-		KEY[0] = 0;
-		#10;
-		KEY[0] = 1;
-
-		#50;
-
-
-		KEY[0] = 0;
-		#10;
-		KEY[0] = 1;
-
-		#50;
-
-
-		KEY[0] = 0;
-		#10;
-		KEY[0] = 1;
-
-		#50;
-
 		
-		KEY[1] = 0;
-		#10;
-		KEY[1] = 1;
 
-		#100;
+
 
 
 		if (~error) $display("Calculator probably works.");
