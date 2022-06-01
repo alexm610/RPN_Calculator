@@ -1,3 +1,6 @@
+`include "regfile.v"
+`include "ram.v"
+
 // Seven segment display definitions 
 `define ZERO  		7'b1000000
 `define ONE   		7'b1111001

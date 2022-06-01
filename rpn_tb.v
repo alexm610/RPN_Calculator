@@ -1,3 +1,5 @@
+`include "rpn.v"
+
 module rpn_tb;
 	reg CLOCK_50;
 	reg [3:0] KEY;
@@ -6,6 +8,7 @@ module rpn_tb;
 	wire [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 	reg [7:0] data_IN, data_OUT;
 	reg error;
+
 
 	rpn DUT(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 		
@@ -17,7 +20,8 @@ module rpn_tb;
 	initial begin
 		error = 0;
 		
-
+		$dumpfile("rpn.vcd");
+		$dumpvars();
 		// set input value on the switches 
 		SW[0] = 1'b0;
     		SW[1] = 1'b1;
