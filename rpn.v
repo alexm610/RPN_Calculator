@@ -1,6 +1,3 @@
-`include "regfile.v"
-`include "ram.v"
-
 // Seven segment display definitions 
 `define ZERO  		7'b1000000
 `define ONE   		7'b1111001
@@ -40,7 +37,7 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	RAM STACK (CLOCK_50, SP, SP, write_memory, output_line, memory_out); 
 
 	assign data_IN = tri_enable ? SW[7:0] : 8'b0;	
-	assign into_SP_reg = tri_enable ? (1'b1 + SP) : 8'b00000000;
+	assign into_SP_reg = tri_enable ? (1'b1 + SP) : 8'b0;
 
 	assign LEDR[7:0] = output_line;
 	assign LEDR[8] = 1'b0;
