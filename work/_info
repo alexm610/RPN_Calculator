@@ -9,194 +9,194 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 vALU
-!s110 1659228294
+Z0 !s110 1659859123
 !i10b 1
 !s100 19XVFJ_?`2f29dz`HlOB63
 IAoU9196m]kH8CLI@5VmI22
-Z0 VDg1SIo80bB@j0V0VzS_@n1
-Z1 dC:/Users/Alex Manak/source/repos/RPN_Calculator
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Alex Manak/source/repos/RPN_Calculator
 w1653779607
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v
 L0 1
-Z2 OV;L;10.5b;63
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1659228294.000000
+Z4 !s108 1659859123.000000
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v|
 !i113 1
-Z3 o-work work
-Z4 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@a@l@u
 vdecoder
-Z5 !s110 1653114964
+Z7 !s110 1653114964
 !i10b 1
 !s100 F^fBZE9[mh]^GBd^kUa0F3
 IKmz@K9>`2elV;CBHNR_lG3
-R0
 R1
-Z6 w1652927595
-Z7 8C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v
-Z8 FC:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v
-L0 58
 R2
+Z8 w1652927595
+Z9 8C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v
+Z10 FC:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v
+L0 58
+R3
 r1
 !s85 0
 31
-Z9 !s108 1653114964.000000
-Z10 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
-Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
+Z11 !s108 1653114964.000000
+Z12 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
+Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/regfile.v|
 !i113 1
-R3
-R4
+R5
+R6
 vDFF_Alex
-Z12 !s110 1659228293
+R0
 !i10b 1
 !s100 KCGmRd_QLQg[nVN;K=2VW0
 IJ_VV264g[:HG^ehQoQnVk3
-R0
 R1
-Z13 w1653117097
-R7
-R8
-Z14 L0 27
 R2
+Z14 w1653117097
+R9
+R10
+Z15 L0 27
+R3
 r1
 !s85 0
 31
-Z15 !s108 1659228293.000000
-R10
-R11
+Z16 !s108 1659859122.000000
+R12
+R13
 !i113 1
-R3
-R4
+R5
+R6
 n@d@f@f_@alex
 vmultiplexer_2input
-R12
+R0
 !i10b 1
 !s100 8ZGh:fUd1Pg482TT6QM^C2
 I4PJ]G9TJXVCXJWk>lHI0a0
-R0
 R1
-R13
-R7
-R8
-L0 12
 R2
+R14
+R9
+R10
+L0 12
+R3
 r1
 !s85 0
 31
-R15
-R10
-R11
+R16
+R12
+R13
 !i113 1
-R3
-R4
-vmultiplexer_8input
 R5
+R6
+vmultiplexer_8input
+R7
 !i10b 1
 !s100 aK^G8OTdD`_8VzoDOmYWC3
 IQNPYT_?UECWA;`QO_88:i1
-R0
 R1
-R6
-R7
-R8
-R14
 R2
+R8
+R9
+R10
+R15
+R3
 r1
 !s85 0
 31
-R9
-R10
 R11
-!i113 1
-R3
-R4
-vRAM
 R12
+R13
+!i113 1
+R5
+R6
+vRAM
+R0
 !i10b 1
 !s100 Cz=9kd^B;Zo^TFmhKT0fc2
 IcCNV<D`SQNJ8k0N^A@M180
-R0
 R1
+R2
 w1652928935
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R15
+R4
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/ram.v|
 !i113 1
-R3
-R4
+R5
+R6
 n@r@a@m
 vreg_load_enable
-R12
+R0
 !i10b 1
 !s100 :N<INVOB7J4klM?9Z3NcE2
 IKX::_6gI67]iA]lzTHBhS2
-R0
 R1
-R13
-R7
-R8
-L0 1
 R2
+R14
+R9
+R10
+L0 1
+R3
 r1
 !s85 0
 31
-R15
-R10
-R11
-!i113 1
-R3
-R4
-vrpn
+R16
 R12
+R13
+!i113 1
+R5
+R6
+vrpn
+!s110 1659859122
 !i10b 1
-!s100 FI7d]A5]1Q[bh`ES1DG>Z0
-I2TOz;T0fD^5E0EWERAl^X1
-R0
+!s100 @c;^gcklTlLaE8f5lbb8z1
+IWjiWI2hm;T;HHGYzJI5043
 R1
-w1659224138
+R2
+w1659230865
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v
 L0 25
-R2
+R3
 r1
 !s85 0
 31
-R15
+R16
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn.v|
 !i113 1
-R3
-R4
+R5
+R6
 vrpn_tb
-R12
+R0
 !i10b 1
 !s100 A842=lBPSe8;`8Cb5CjS=0
 I_j0N:PD^jBR7QVfC[6ZRf2
-R0
 R1
+R2
 w1659223568
 8C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v
 FC:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v
 L0 1
-R2
+R3
 r1
 !s85 0
 31
-R15
+R4
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/rpn_tb.v|
 !i113 1
-R3
-R4
+R5
+R6
