@@ -1,4 +1,4 @@
-module ALU (Ain, Bin, ALUop, out);
+module alu (Ain, Bin, ALUop, out);
     input [7:0] Ain, Bin;
     input [2:0] ALUop;
     output [7:0] out;
