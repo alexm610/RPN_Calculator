@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 valu
-Z0 !s110 1660366293
+Z0 !s110 1660367868
 !i10b 1
 !s100 n^M2coO7Po?[kejX[8=FS0
 IE44zO>3hXVMgGWKaZ1g]>3
@@ -23,7 +23,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1660366293.000000
+Z6 !s108 1660367868.000000
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v|
 Z7 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v|
 !i113 1

@@ -35,3 +35,13 @@ MAY 28, 2022
 		data is written to the dummy register, and then to memory, and then SP is updated. Reset works after enter button has been pressed 
 		several times
 	- Have created an ALU module, not connected to anything yet though. 
+
+AUGUST 12, 2022
+	- Starting up again
+	- basic functionality remains, stack pointer seems to increment and reset to zero upon correct signals
+	- Added two new registers that take input from the stack, and output into the ALU
+	- still need to add control signals into the CPU finite state machine. 
+	- wave.do file updated with new signals; these signals are not currently connected to anything
+	- Need to test if ~KEY[2] (the button that will be used to indiate an ALU operation) going HIGH can be added into the FSM properly
+	- Stack pointer and thus the stack should continue to increment/decrement to zero upon proper usage of ~KEY[0] and ~KEY[1]
+	- Only when ~KEY[2] is asserted, should an ALU operation begin

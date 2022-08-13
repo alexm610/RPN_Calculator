@@ -30,6 +30,17 @@ add wave -noupdate /rpn_tb/DUT/STACK/read_address
 add wave -noupdate /rpn_tb/DUT/STACK/write_address
 add wave -noupdate /rpn_tb/DUT/STACK/din
 add wave -noupdate /rpn_tb/DUT/STACK/dout
+add wave -noupdate -divider ALU
+add wave -noupdate /rpn_tb/DUT/load_A
+add wave -noupdate /rpn_tb/DUT/load_B
+add wave -noupdate /rpn_tb/DUT/ALU_OP
+add wave -noupdate /rpn_tb/DUT/into_alu_A
+add wave -noupdate /rpn_tb/DUT/into_alu_B
+add wave -noupdate /rpn_tb/DUT/out_ALU
+add wave -noupdate -divider {ALU REGS}
+add wave -noupdate /rpn_tb/DUT/into_alu_A
+add wave -noupdate /rpn_tb/DUT/into_alu_B
+add wave -noupdate /rpn_tb/DUT/out_ALU
 add wave -noupdate -divider MEMORY
 add wave -noupdate {/rpn_tb/DUT/STACK/mem[16]}
 add wave -noupdate {/rpn_tb/DUT/STACK/mem[15]}
@@ -65,4 +76,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {594 ps} {938 ps}
+WaveRestoreZoom {0 ps} {344 ps}
