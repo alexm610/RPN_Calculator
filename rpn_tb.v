@@ -17,9 +17,7 @@ module rpn_tb;
 
 	initial begin
 		error = 0;
-		
-		$dumpfile("rpn.vcd");
-		$dumpvars();
+	
 		// set input value on the switches 
 		SW[0] = 1'b0;
     		SW[1] = 1'b1;

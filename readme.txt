@@ -45,3 +45,11 @@ AUGUST 12, 2022
 	- Need to test if ~KEY[2] (the button that will be used to indiate an ALU operation) going HIGH can be added into the FSM properly
 	- Stack pointer and thus the stack should continue to increment/decrement to zero upon proper usage of ~KEY[0] and ~KEY[1]
 	- Only when ~KEY[2] is asserted, should an ALU operation begin
+
+AUGUST 13, 2022
+	- In analyzing my design that I've come up with until now, I've realized there is little need for the dummy register. 
+	- I can simply have switch values written to the stack upon a 'write RAM' high signal.
+	- The goal is to now delete most of what I have, as to simplify the design for writing to the stack. 
+	- I came acros this idea, and epiphany that I'm overcomplicating things, when I tried to modify the design such that the 
+		LEDs displayed exactly what was at the top of the stack. 
+	- As of today, the LEDs only display what is in the DUMMY register. This seems inefficient. 

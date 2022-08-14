@@ -1,5 +1,3 @@
-`include "rpn.v"
-
 module rpn_tb;
 	reg CLOCK_50;
 	reg [3:0] KEY;
