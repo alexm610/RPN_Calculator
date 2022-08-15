@@ -53,3 +53,10 @@ AUGUST 13, 2022
 	- I came acros this idea, and epiphany that I'm overcomplicating things, when I tried to modify the design such that the 
 		LEDs displayed exactly what was at the top of the stack. 
 	- As of today, the LEDs only display what is in the DUMMY register. This seems inefficient. 
+
+AUGUST 14, 2022
+	- Upon further inspection, the stack pointer is not working properly, and thus the desired functionality of the LEDs displaying whatever 
+		is on top of the stack is not working. 
+	- Need to modify the process of incrementing the stack pointer; as of now, the stack pointer points to the next space on the stack,
+		regardless of the fact that there is nothing at that location yet. 
+	- But first, try removing the dummy register; it seems like an unnecessary middle man...

@@ -35,12 +35,12 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	
 	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write_SP, SP);
 
-	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write_dummy, output_line);
+	// reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write_dummy, output_line);
 	
 	//reg_load_enable #(8) reg_A (CLOCK_50, memory_out, load_A, into_alu_A);
 	//reg_load_enable #(8) reg_B (CLOCK_50, memory_out, load_B, into_alu_B);
 	//alu ALU (into_alu_A, into_alu_B, ALU_OP, out_ALU);
-	RAM STACK (CLOCK_50, SP, SP, write_memory, output_line, memory_out); 
+	RAM STACK (CLOCK_50, SP, SP, write_memory, data_IN, memory_out); 
 
 	assign data_IN = tri_enable ? SW[7:0] : 8'b0; 	
 	assign into_SP_reg = tri_enable ? (1'b1 + SP) : 8'b0;
