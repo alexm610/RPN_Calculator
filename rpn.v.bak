@@ -28,14 +28,13 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	input [9:0] SW;
 	output [9:0] LEDR;
 	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-	wire [7:0] data_IN, data_OUT, SP, into_SP_reg, output_line, memory_out, into_alu_A, into_alu_B, out_ALU;
-	reg write_dummy, tri_enable, write_SP, write_memory, load_A, load_B;
+	wire [7:0] data_IN, data_OUT, SP, PC. into_SP_reg, output_line, memory_out, into_alu_A, into_alu_B, out_ALU, into_PC;
+	reg write_dummy, tri_enable, write_SP, write_memory, load_A, load_B, write_PC;
 	reg [3:0] current_state;
 	reg [2:0] ALU_OP;
 	
+	reg_load_enable #(8) PROGRAM_COUNTER (CLOCK_50, into_PC, write_PC, PC); 
 	reg_load_enable #(8) STACK_POINTER (CLOCK_50, into_SP_reg, write_SP, SP);
-
-	reg_load_enable #(8) DUMMY_REGISTER (CLOCK_50, data_IN, write_dummy, output_line);
 	
 	//reg_load_enable #(8) reg_A (CLOCK_50, memory_out, load_A, into_alu_A);
 	//reg_load_enable #(8) reg_B (CLOCK_50, memory_out, load_B, into_alu_B);

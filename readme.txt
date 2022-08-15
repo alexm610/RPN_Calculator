@@ -60,3 +60,11 @@ AUGUST 14, 2022
 	- Need to modify the process of incrementing the stack pointer; as of now, the stack pointer points to the next space on the stack,
 		regardless of the fact that there is nothing at that location yet. 
 	- But first, try removing the dummy register; it seems like an unnecessary middle man...
+	- A ha! I slightly modified the design to work without a dummy register, seems to have the same behaviour as before
+	- EPIPHANY: rename the current 'stack pointer' to program counter, and create a new stack pointer register that is one less than the program 
+		counter!
+	- Time to go to bed. I was thinking about having a program counter and a stack pointer. This seems inefficient. So I will 
+		change the behaviour of the stack pointer such that UPON RESET the stack pointer is reset. Say the reset button is triggered, then 
+		the CPU is to write the data on SW[7:0] into position 0 of the stack, THEN the stack pointer is set to zero. And as more numbers are
+		entered, the stack pointer is incremented to the next spot on the stack, SW[7:0] is written to this new position, and that's it. 
+		At that point, stack pointer is pointing to the top of the stack. 
