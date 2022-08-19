@@ -69,12 +69,12 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 			endcase
 
 			case (current_state)
-				`S_ZERO: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
-				`S_WRITE_ZEROS: {write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b1, 1'b0, 1'b0};
-				`S_WAIT: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
-				`S_WRITE1: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b1, 1'b0, 1'b0, 1'b1};
-				`S_WRITE2: 	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b1, 1'b1};
-				`S_WRITE3:	{write_dummy, write_SP, write_memory, tri_enable} = {1'b0, 1'b1, 1'b0, 1'b1};	
+				`S_ZERO: 	{write_PC, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
+				`S_WRITE_ZEROS: {write_PC, write_SP, write_memory, tri_enable} = {1'b1, 1'b1, 1'b0, 1'b0};
+				`S_WAIT: 	{write_PC, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b0, 1'b0};
+				`S_WRITE1: 	{write_PC, write_SP, write_memory, tri_enable} = {1'b1, 1'b0, 1'b0, 1'b1};
+				`S_WRITE2: 	{write_PC, write_SP, write_memory, tri_enable} = {1'b0, 1'b0, 1'b1, 1'b1};
+				`S_WRITE3:	{write_PC, write_SP, write_memory, tri_enable} = {1'b0, 1'b1, 1'b0, 1'b1};	
 			endcase	
 		end
 	end

@@ -28,7 +28,7 @@ module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	input [9:0] SW;
 	output [9:0] LEDR;
 	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-	wire [7:0] data_IN, data_OUT, SP, PC. into_SP_reg, output_line, memory_out, into_alu_A, into_alu_B, out_ALU, into_PC;
+	wire [7:0] data_IN, data_OUT, SP, PC, into_SP_reg, output_line, memory_out, into_alu_A, into_alu_B, out_ALU, into_PC;
 	reg write_dummy, tri_enable, write_SP, write_memory, load_A, load_B, write_PC;
 	reg [3:0] current_state;
 	reg [2:0] ALU_OP;

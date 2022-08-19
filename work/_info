@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/18.1
 valu
-Z0 !s110 1660548997
+Z0 !s110 1660884323
 !i10b 1
 !s100 n^M2coO7Po?[kejX[8=FS0
 IE44zO>3hXVMgGWKaZ1g]>3
@@ -23,7 +23,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1660548997.000000
+Z6 !s108 1660884323.000000
 !s107 C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v|
 Z7 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alex Manak/source/repos/RPN_Calculator/alu.v|
 !i113 1
@@ -87,7 +87,7 @@ R5
 r1
 !s85 0
 31
-Z19 !s108 1660548996.000000
+R6
 R15
 R16
 !i113 1
@@ -109,7 +109,7 @@ R5
 r1
 !s85 0
 31
-R19
+R6
 R15
 R16
 !i113 1
@@ -173,20 +173,20 @@ R5
 r1
 !s85 0
 31
-R19
+R6
 R15
 R16
 !i113 1
 R8
 R9
 vrpn
-!s110 1660548996
+R0
 !i10b 1
-!s100 V><3i5WROf[cV^WHgT40n2
-IdPOD;>gj^;hFXfEG?:4;N1
+!s100 FAh6La4XEdjiQ@`^lB]lT2
+IPSnH_hn]cR85BbiTJ`am[2
 R1
 R2
-w1660548994
+w1660884318
 8C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn.v
 FC:\Users\Alex Manak\source\repos\RPN_Calculator\rpn.v
 L0 25
@@ -194,7 +194,7 @@ R5
 r1
 !s85 0
 31
-R19
+R6
 !s107 C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Alex Manak\source\repos\RPN_Calculator\rpn.v|
 !i113 1
