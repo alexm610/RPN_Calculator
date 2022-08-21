@@ -68,3 +68,6 @@ AUGUST 14, 2022
 		the CPU is to write the data on SW[7:0] into position 0 of the stack, THEN the stack pointer is set to zero. And as more numbers are
 		entered, the stack pointer is incremented to the next spot on the stack, SW[7:0] is written to this new position, and that's it. 
 		At that point, stack pointer is pointing to the top of the stack. 
+
+AUGUST 21, 2022
+	- Need only one wire out of RAM into the A and B regs, just make sure you put the enable signal high only for one at a time!!
