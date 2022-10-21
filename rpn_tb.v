@@ -155,7 +155,7 @@ module rpn_tb;
 		KEY[0] = 1;
 		#140;
 
-		if (~error) $display("Calculator probably works.");
+		if (~error) $display("Calculator probably works??wwww?.");
 		$stop;
 	end
 endmodule 

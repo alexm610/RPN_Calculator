@@ -1,5 +1,0 @@
-
-State Machine - |rpn|current_state
-Name current_state.0001 
-current_state.0000 0 
-current_state.0001 1 
