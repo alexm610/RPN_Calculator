@@ -30,7 +30,7 @@ module tb_rtl_rpn();
 		
 		// REMEMBER: all buttons are active LOW
 		KEY[0] = 1; 
-		SW = 8'hA9;
+		SW = {2'b00, 8'hA9};
 		$display("TEST 1: Assert and hold reset, and confirm PC is set to zero");
 		KEY[3] = 1; #2;
 		KEY[3] = 0; #8;

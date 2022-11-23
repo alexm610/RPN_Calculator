@@ -26,7 +26,7 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     logic wren, A_en, B_en, RESULT_en;
     logic [2:0] ALU_sel;
     integer PC; // program counter
-    enum {IDLE} state;
+    enum {IDLE, OPERATE_1, OPERATE_2, OPERATE_3, OPERATE_4, OPERATE_5, MATH_0, ERROR} state;
 
     stack STACK (.address(addr), 
         .clock(CLOCK_50), 
@@ -67,20 +67,80 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
             addr <= 8'd0;
             data <= 8'd0;
             PC <= 0; // reset the program counter
+            HEX5 <= `OFF;
+            HEX4 <= `OFF;
+            HEX3 <= `OFF;
+            HEX2 <= `OFF;
+            HEX1 <= `OFF;
+            HEX0 <= `OFF;
         end else begin
             case (state)
                 IDLE: begin
                     if (~KEY[0]) begin
-                        addr <= PC[7:0];
-                        wren <= 1;
-                        data <= SW;
-                        state <= IDLE;
-                        PC <= PC + 1;
+                        if (SW[9]) begin
+                           /*
+                                if SW[9] is HIGH, then that means we are to interpret the value on SW as an operation to be done on the top
+                                two values on the stack.
+                           */
+                           // load SW[2:0] into ALUop
+                           ALU_sel <= SW[2:0];
+                           state <= OPERATE;
+                        end else begin
+                            addr <= PC[7:0];
+                            wren <= 1;
+                            data <= SW;
+                            state <= IDLE;
+                            PC <= PC + 1;
+                        end
                     end else begin
                         state <= IDLE;
                         wren <= 0;
                     end
                 end
+                OPERATE_1: begin
+                    // load the value on the top of the stack into B register
+                    // load the second value into the A register, as per RPN rules
+                    // remember; when about to POP a value from the stack, check if PC = 0, 
+                        // if so, then ERROR has occurred and should be displayed on the HEX display
+
+                    // begin POP process 
+
+                    // first check that PC != 0;
+                    if (PC == 8'd0) begin
+                        state <= ERROR;
+                        HEX5 <= `OFF;
+                        HEX4 <= `E;
+                        HEX3 <= `r;
+                        HEX2 <= `r;
+                        HEX1 <= `o;
+                        HEX0 <= `r;
+                    end
+
+                    //pop that TOP value of the stack into the B reg
+
+                    addr <= PC[7:0];
+                    state <= OPERATE_2;
+                end
+                OPERATE_2: begin
+                    B_en <= 1;
+                    state <= OPERATE_3;
+                end
+                OPERATE_3: begin
+                    B_en <= 0;
+                    addr <= PC[7:0] - 8'd1;
+                    state <= OPERATE_4;
+                end
+                OPERATE_4: begin
+                    A_en <= 1;
+                    OPERATE_5;
+                end
+                OPERATE_5: begin
+                    A_en <= 0;
+                    addr <= PC[7:0] - 8'd1;
+                    ALU_sel <= SW[2:0];
+                    state <= MATH_0;
+                end
+                ERROR: state <= ERROR;
             endcase
         end 
     end

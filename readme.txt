@@ -79,3 +79,5 @@ NOVEMBER 21, 2022
 	- with the new "enable = KEY[0]" system, we can also have a check for if SW[9] is high or low:
 		if its high then that means a number is on the switches
 		if its low, then that means an operation needs to happen, and read the switch value as an operation instead!
+	- note: have an error check! If an ALU operation is started, keep checking if the hardware tries to decrement the PC BELOW ZERO; meaning that
+		the ALU operation was triggered without enough operands on the Stack!!!!!!!!!!!
