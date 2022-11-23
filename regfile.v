@@ -30,6 +30,7 @@ module DFF_Alex(clk, in, out);
     input [n-1:0] in;
     output reg [n-1:0] out;
 
-    always @(posedge clk)
+    always @(posedge clk) begin
         out = in; 
+    end
 endmodule

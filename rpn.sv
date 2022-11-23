@@ -22,8 +22,9 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     input logic [9:0] SW; 
     output logic [9:0] LEDR;
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-    logic [7:0] data, out, addr, into_B, into_A;
-    logic wren, A_en, B_en;
+    logic [7:0] data, out, addr, into_B, into_A, out_ALU;
+    logic wren, A_en, B_en, RESULT_en;
+    logic [2:0] ALU_sel;
     integer PC; // program counter
     enum {IDLE} state;
 
@@ -33,10 +34,10 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .wren(wren), 
         .q(out));
 
-    alu ALU (.Ain(),
-        .Bin(),
-        .ALUop(),
-        .out());
+    alu ALU (.Ain(into_A),
+        .Bin(into_B),
+        .ALUop(ALU_sel),
+        .out(out_ALU));
 
     reg_load_enable #(8) A_REG (.clk(CLOCK_50),
         .in(out),
@@ -47,6 +48,11 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .in(out),
         .enable(B_en),
         .out(into_B));
+
+    reg_load_enable #(8) RESULT_REG (.clk(CLOCK_50),
+        .in(out_ALU),
+        .enable(RESULT_en),
+        .out(data)); // data goes right into the memory block!!
     
     assign LEDR = out;
 
