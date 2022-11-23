@@ -22,8 +22,8 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     input logic [9:0] SW; 
     output logic [9:0] LEDR;
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
-    logic [7:0] data, out, addr;
-    logic wren;
+    logic [7:0] data, out, addr, into_B, into_A;
+    logic wren, A_en, B_en;
     integer PC; // program counter
     enum {IDLE} state;
 
@@ -37,6 +37,16 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .Bin(),
         .ALUop(),
         .out());
+
+    reg_load_enable #(8) A_REG (.clk(CLOCK_50),
+        .in(out),
+        .enable(A_en),
+        .out(into_A));
+
+    reg_load_enable #(8) B_REG (.clk(CLOCK_50),
+        .in(out),
+        .enable(B_en),
+        .out(into_B));
     
     assign LEDR = out;
 
@@ -46,6 +56,8 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         if (~KEY[3]) begin
             state <= IDLE;
             wren <= 0;
+            A_en <= 0;
+            B_en <= 0;
             addr <= 8'd0;
             data <= 8'd0;
             PC <= 0; // reset the program counter
