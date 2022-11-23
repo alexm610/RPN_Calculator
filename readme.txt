@@ -71,3 +71,11 @@ AUGUST 14, 2022
 
 AUGUST 21, 2022
 	- Need only one wire out of RAM into the A and B regs, just make sure you put the enable signal high only for one at a time!!
+
+NOVEMBER 21, 2022
+	- no longer using the rpn.v that has been created thus far, will be replaced with rpn.sv file that has same functionality
+		thus far (only loading to the stack) but uses methods learned in CPEN 311
+	- RAM will be replaced with wizard-made memory file, as per CPEN 311 lab 3 (file will be built by quartus)
+	- with the new "enable = KEY[0]" system, we can also have a check for if SW[9] is high or low:
+		if its high then that means a number is on the switches
+		if its low, then that means an operation needs to happen, and read the switch value as an operation instead!

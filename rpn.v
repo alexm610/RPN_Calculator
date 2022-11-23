@@ -22,7 +22,7 @@
 `define S_WRITE2	4'b0100
 `define S_WRITE3	4'b0101
 
-module rpn(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
+module rpn_old_fashioned(KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, CLOCK_50);
 	input CLOCK_50;
 	input [3:0] KEY;
 	input [9:0] SW;
