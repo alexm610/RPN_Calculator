@@ -86,3 +86,25 @@ NOVEMBER 23, 2022
 	- removed the register for the result out of the ALU; now the output of the ALU is directly connected into the stack.
 		in the state machine, depending if we are idling or in operate mode, the data bus is either set to SW value or whatever is on the output of the ALU	
 	- Do i even need a PC?? just set addr to 0 initially, and increment/decrement as needed
+	- Time to go to bed: simulation works perfectly! but it fails completely on the hardware
+		my hypothesis is that the program is running so fast, that when the ENABLE key is asserted, the state machine cycles through
+		its states as it should, but by the time it gets back to the IDLE state, the ENABLE key is still asserted in practice 
+		because I can't move as fast as a 50 MHz clock. The likely solution to this is to add a protocol (ready/enable!!) that only starts the write or 
+		operate processes once the ENABLE key is asserted AND THEN deasserted. This wasn't an issue in simulation because the ENABLE button 
+		was being asserted and deasserted within 4 ps, which is not possible in reality. 
+	- With this new idea to add a ready/enable protocol, perhaps I could break the separate processes of writing to memory and then 
+		operating on memory into different modules altogether, each with their own state machine! I'd have a module for writing, with 
+		its own ready/enable signals, and a module for operation, also with its own ready/enable signals. 
+
+NOVEMBER 24, 2022
+	- A much more simplistic idea: just have an extra state that waits for KEY[0] to be deasserted. You can still split the functionality
+		separate modules, but start with that simple solution. 
+	- Upon further consideration, implementation of a ready/enable protocol and subsequent splitting of functionality into separate 
+		modules is unnecessary, and should be left as an exercise once project is complete. The main issue was the stop/start behaviour
+		that waited for deassertion of the ENABLE key, which has been solved. Introduction of a ready/enable protocol would still use 
+		this functionality but would add complication. Split rpn.sv into separate modules later on, at least get it working first. 
+
+IDEAS FOR MORE FEATURES:
+	- add registers to hold the most recent operands and have all of that displayed on the HEX display!!
+		left two HEXs for the first operand, middle two for the second, and the rightmost two HEXs for the output
+	
