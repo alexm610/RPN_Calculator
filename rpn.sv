@@ -23,10 +23,9 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
     output logic [9:0] LEDR;
     output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
     logic [7:0] data, out, addr, into_B, into_A, out_ALU;
-    logic wren, A_en, B_en, RESULT_en;
+    logic wren, A_en, B_en;
     logic [2:0] ALU_sel;
-    integer PC; // program counter
-    enum {IDLE, OPERATE_1, OPERATE_2, OPERATE_3, OPERATE_4, OPERATE_5, MATH_0, ERROR} state;
+    enum {IDLE, WRITE, OPERATE_1, OPERATE_2, OPERATE_3, OPERATE_4, OPERATE_5, MATH_0, ERROR} state;
 
     stack STACK (.address(addr), 
         .clock(CLOCK_50), 
@@ -49,14 +48,8 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .enable(B_en),
         .out(into_B));
 
-    reg_load_enable #(8) RESULT_REG (.clk(CLOCK_50),
-        .in(out_ALU),
-        .enable(RESULT_en),
-        .out(data)); // data goes right into the memory block!!
-    
     assign LEDR = out;
-
-    initial PC = 0;
+    //initial addr = 0;
 
     always @(posedge CLOCK_50) begin
         if (~KEY[3]) begin
@@ -66,7 +59,6 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
             B_en <= 0;
             addr <= 8'd0;
             data <= 8'd0;
-            PC <= 0; // reset the program counter
             HEX5 <= `OFF;
             HEX4 <= `OFF;
             HEX3 <= `OFF;
@@ -84,18 +76,23 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                            */
                            // load SW[2:0] into ALUop
                            ALU_sel <= SW[2:0];
-                           state <= OPERATE;
+                           state <= OPERATE_1;
                         end else begin
-                            addr <= PC[7:0];
+                            //addr <= 8'd0;
+                            //addr <= addr + 8'd1;
                             wren <= 1;
                             data <= SW;
-                            state <= IDLE;
-                            PC <= PC + 1;
+                            state <= WRITE;
                         end
                     end else begin
                         state <= IDLE;
                         wren <= 0;
                     end
+                end
+                WRITE: begin
+                    wren <= 0;
+                    state <= IDLE;
+                    addr <= addr + 8'd1;
                 end
                 OPERATE_1: begin
                     // load the value on the top of the stack into B register
@@ -106,7 +103,7 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                     // begin POP process 
 
                     // first check that PC != 0;
-                    if (PC == 8'd0) begin
+                    if (addr == 8'd0) begin 
                         state <= ERROR;
                         HEX5 <= `OFF;
                         HEX4 <= `E;
@@ -118,7 +115,7 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 
                     //pop that TOP value of the stack into the B reg
 
-                    addr <= PC[7:0];
+                    // addr <= PC[7:0];
                     state <= OPERATE_2;
                 end
                 OPERATE_2: begin
@@ -127,18 +124,23 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
                 end
                 OPERATE_3: begin
                     B_en <= 0;
-                    addr <= PC[7:0] - 8'd1;
+                    addr <= addr - 8'd1;
                     state <= OPERATE_4;
                 end
                 OPERATE_4: begin
                     A_en <= 1;
-                    OPERATE_5;
+                    state <= OPERATE_5;
                 end
                 OPERATE_5: begin
                     A_en <= 0;
-                    addr <= PC[7:0] - 8'd1;
+                    //addr <= PC[7:0] - 8'd1;
                     ALU_sel <= SW[2:0];
                     state <= MATH_0;
+                end
+                MATH_0: begin
+                    data <= out_ALU;
+                    wren <= 1; // here the stack address should still be set to the position of the second number that was POPped off the stack, which is where we want the result to go
+                    state <= IDLE;
                 end
                 ERROR: state <= ERROR;
             endcase

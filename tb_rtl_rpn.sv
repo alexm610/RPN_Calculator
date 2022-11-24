@@ -6,6 +6,9 @@ module tb_rtl_rpn();
 	logic [9:0] SW;
 	logic [9:0] LEDR;
 	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
+	integer i;
+	enum {IDLE, WRITE, OPERATE_1, OPERATE_2, OPERATE_3, OPERATE_4, OPERATE_5, MATH_0, ERROR} state;
+
 
 	rpn dut (.KEY(KEY), 
 		.SW(SW), 
@@ -35,7 +38,7 @@ module tb_rtl_rpn();
 		KEY[3] = 1; #2;
 		KEY[3] = 0; #8;
 		// at this time, with reset continuously asserted, PC should be held at zero
-		if (dut.PC !== 0) begin
+		if (dut.addr !== 0) begin
 			$display("TEST 1 FAILED: PC is not zero with reset asserted."); #10; $stop;
 		end else begin
 			$display("TEST 1 PASSED.");
@@ -44,7 +47,7 @@ module tb_rtl_rpn();
 
 		$display("TEST 2: Deassert reset, wait a bit, DO NOT ASSERT ENABLE, and confirm PC is still zero");
 		KEY[3] = 1; #20;
-		if (dut.PC !== 0) begin
+		if (dut.addr !== 0) begin
 			$display("TEST 2 FAILED: PC is not zero with reset asserted."); #10; $stop;
 		end else begin
 			$display("TEST 2 PASSED.");
@@ -54,10 +57,42 @@ module tb_rtl_rpn();
 		$display("TEST 3: Assert ENABLE, confirm PC is incremented, and output on memory is correct");
 		KEY[0] = 0; #2;
 		KEY[0] = 1; #4;
-		if (dut.PC !== 1) begin
+		if (dut.addr !== 1) begin
 			$display("TEST 3 FAILED: PC did not increase to 1."); #10; $stop;
+		end else if (dut.STACK.altsyncram_component.m_default.altsyncram_inst.mem_data[0] !== 8'hA9) begin
+			$display("TEST 3 FAILED: STACK[0] != A9."); #10; $stop;
 		end else begin
 			$display("TEST 3 PASSED.");
+			$display("");
+		end
+
+		$display("TEST 4: Assert ENABLE, confirm PC is incremented, and output on memory is correct");
+		SW = {2'b00, 8'h5B};
+		KEY[0] = 0; #2;
+		KEY[0] = 1; #4;
+		if (dut.addr !== 2) begin
+			$display("TEST 4 FAILED: PC did not increase to 2."); #10; $stop;
+		end else if (dut.STACK.altsyncram_component.m_default.altsyncram_inst.mem_data[0] !== 8'hA9) begin
+			$display("TEST 4 FAILED: STACK[0] != A9."); #10; $stop;
+		end else if (dut.STACK.altsyncram_component.m_default.altsyncram_inst.mem_data[1] !== 8'h5B) begin
+			$display("TEST 4 FAILED: STACK[1] != 5B."); #10; $stop;
+		end else begin
+			$display("TEST 4 PASSED.");
+			$display("");
+		end
+		
+		//time to do some math!!
+		SW = 10'b10_0000_0000; // add operation
+		$display("TEST 5: Set SW[9] high, assert ENABLE, confirm PC is decremented, and output on memory is correct");
+		KEY[0] = 0; #2;
+		KEY[0] = 1; 
+		wait (dut.state == IDLE);
+		if (dut.addr !== 0) begin
+			$display("TEST 5 FAILED: PC did not decrease to 0."); #10; $stop;
+		end else if (dut.STACK.altsyncram_component.m_default.altsyncram_inst.mem_data[0] !== (8'hA9 + 8'h5B)) begin
+			$display("TEST 5 FAILED: STACK[0] != A9 + 5B. Actual = %h", dut.STACK.altsyncram_component.m_default.altsyncram_inst.mem_data[0]); #10; $stop;
+		end else begin
+			$display("TEST 5 PASSED.");
 			$display("");
 		end
 

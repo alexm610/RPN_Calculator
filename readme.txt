@@ -81,3 +81,8 @@ NOVEMBER 21, 2022
 		if its low, then that means an operation needs to happen, and read the switch value as an operation instead!
 	- note: have an error check! If an ALU operation is started, keep checking if the hardware tries to decrement the PC BELOW ZERO; meaning that
 		the ALU operation was triggered without enough operands on the Stack!!!!!!!!!!!
+
+NOVEMBER 23, 2022
+	- removed the register for the result out of the ALU; now the output of the ALU is directly connected into the stack.
+		in the state machine, depending if we are idling or in operate mode, the data bus is either set to SW value or whatever is on the output of the ALU	
+	- Do i even need a PC?? just set addr to 0 initially, and increment/decrement as needed
