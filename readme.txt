@@ -108,8 +108,12 @@ DECEMBER 2, 2022
 	- Product works, albeit with minimal testing. Addition definitely works, in both simulation and on the board; the output value is presented onto the 
 		LEDs. 
 	- Will now attempt to write code that converts a 4-bit binary value to hexadecimal value, as to display the calculated output onto the HEX display
+	- Increase output put bus width to account for calculation output values larger than 8 bits!
 
 IDEAS FOR MORE FEATURES:
 	- add registers to hold the most recent operands and have all of that displayed on the HEX display!!
 		left two HEXs for the first operand, middle two for the second, and the rightmost two HEXs for the output
-	
+	- add overflow and underflow indicator
+		- may require addition of underflow and overflow flags on the ALU	
+			- see lab 7 of CPEN 211!
+	- UPON RESET, STACK SHOULD BE ZEROED OUT!!!!!!!!!!!!!!!!!!!!!

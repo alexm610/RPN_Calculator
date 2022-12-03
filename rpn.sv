@@ -49,8 +49,18 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .enable(B_en),
         .out(into_B));
 
-    assign LEDR = out;
+    binary_to_hex HEX_ZERO (.BINARY(out[3:0]),
+        .HEX(HEX0));
+    
+    binary_to_hex HEX_ONE (.BINARY(out[7:4]),
+        .HEX(HEX1));
 
+    assign HEX2 = `OFF;
+    assign HEX3 = `OFF;
+    assign HEX4 = `OFF;
+    assign HEX5 = `OFF;
+    assign LEDR = out;
+    
     always @(posedge CLOCK_50) begin
         if (~KEY[3]) begin
             state <= IDLE;
@@ -60,12 +70,6 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
             addr <= 8'd0;
             data <= 8'd0;
             ALU_sel <= 3'b000;
-            HEX5 <= `OFF;
-            HEX4 <= `OFF;
-            HEX3 <= `OFF;
-            HEX2 <= `OFF;
-            HEX1 <= `OFF;
-            HEX0 <= `OFF;
             increment <= 0;
         end else begin
             case (state)
