@@ -50,7 +50,6 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
         .out(into_B));
 
     assign LEDR = out;
-    //initial addr = 0;
 
     always @(posedge CLOCK_50) begin
         if (~KEY[3]) begin
@@ -60,6 +59,7 @@ module rpn (CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
             B_en <= 0;
             addr <= 8'd0;
             data <= 8'd0;
+            ALU_sel <= 3'b000;
             HEX5 <= `OFF;
             HEX4 <= `OFF;
             HEX3 <= `OFF;

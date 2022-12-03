@@ -80,7 +80,7 @@ module tb_rtl_rpn();
 			$display("TEST 4 PASSED.");
 			$display("");
 		end
-		/*
+		
 		//time to do some math!!
 		SW = 10'b10_0000_0000; // add operation
 		$display("TEST 5: Set SW[9] high, assert ENABLE, confirm PC is decremented, and output on memory is correct");
@@ -95,8 +95,8 @@ module tb_rtl_rpn();
 			$display("TEST 5 PASSED.");
 			$display("");
 		end
-		*/
-		// don't forget to add a test for the ERROR check!!
+		
+		// don't forget to add a test for the ERROR check!! (ie. invalid operands when operator is set)
 		$display("------End rpn.sv Testbench------");
 		$stop;
 	end

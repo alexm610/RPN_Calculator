@@ -104,6 +104,11 @@ NOVEMBER 24, 2022
 		that waited for deassertion of the ENABLE key, which has been solved. Introduction of a ready/enable protocol would still use 
 		this functionality but would add complication. Split rpn.sv into separate modules later on, at least get it working first. 
 
+DECEMBER 2, 2022
+	- Product works, albeit with minimal testing. Addition definitely works, in both simulation and on the board; the output value is presented onto the 
+		LEDs. 
+	- Will now attempt to write code that converts a 4-bit binary value to hexadecimal value, as to display the calculated output onto the HEX display
+
 IDEAS FOR MORE FEATURES:
 	- add registers to hold the most recent operands and have all of that displayed on the HEX display!!
 		left two HEXs for the first operand, middle two for the second, and the rightmost two HEXs for the output
