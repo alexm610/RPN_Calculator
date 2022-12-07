@@ -12,13 +12,14 @@
 /*-------------------------------*/
 /*           LCD Pins            */
 /*-------------------------------*/
-#define LCD_RS P2_5
+#define LCD_RS P1_0
 // #define LCD_RW PX_X // Not used in this code, connect the pin to GND
-#define LCD_E  P2_4
-#define LCD_D4 P3_4
-#define LCD_D5 P3_5
-#define LCD_D6 P3_6
-#define LCD_D7 P3_7
+#define LCD_E  P1_1
+#define LCD_D4 P1_2
+#define LCD_D5 P1_3
+#define LCD_D6 P1_4
+#define LCD_D7 P1_5
+
 #define LCD2_RS P2_6
 // #define LCD_RW PX_X // Not used in this code, connect the pin to GND
 #define LCD2_E  P2_7

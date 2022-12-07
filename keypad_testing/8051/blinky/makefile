@@ -1,7 +1,7 @@
 CC=wine64 c51
-PORTN=/dev/$(shell ls /dev | grep "cu.usbserial")
+PORTN=/dev/cu.usbserial-DN01CSVW
 DEPS=prototypes.h
-OBJS=blinky.obj main.obj initialize.obj
+OBJS=main.obj blinky.obj initialize.obj # the hex file is named after which of these obj's is first
 export WINEDEBUG=-all
 
 default: main.hex

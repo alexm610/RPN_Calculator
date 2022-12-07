@@ -13,8 +13,12 @@ void mydelay (void)
 void blink()
 {	
 	P3_2=0;
+	LCDprint("Good luck ", 1, 1);
+	LCDprint("            ", 2, 1);
 	mydelay();
 	P3_2=1;
+	LCDprint("Somya!", 2, 1);
+	LCDprint("            ", 1, 1);
 	mydelay();
 	printf("Hello from blinky!\n");
 
