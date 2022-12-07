@@ -61,3 +61,5 @@ void waitms (unsigned int ms);
 void wait_us (unsigned char x);
 unsigned int volatile GetADC(unsigned char channel);
 unsigned char SPIWrite(unsigned char out_byte);
+void mydelay (void);
+void blink();
