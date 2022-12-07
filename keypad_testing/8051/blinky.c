@@ -1,5 +1,7 @@
-#include "initialize.h"
-
+//#include "initialize.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <at89lp51rd2.h>
 // ~C51~  
 
 void mydelay (void)

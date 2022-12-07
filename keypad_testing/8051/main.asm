@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by C51
 ; Version 1.0.0 #1170 (Feb 16 2022) (MSVC)
-; This file was generated Tue Dec 06 19:00:07 2022
+; This file was generated Tue Dec 06 23:23:05 2022
 ;--------------------------------------------------------
 $name main
 $optc51 --model-small
@@ -1139,18 +1139,18 @@ L019008?:
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
 ;------------------------------------------------------------
-;	main.c:3: void main (void)
+;	main.c:5: void main (void)
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
 _main:
-;	main.c:5: P3M0=0;
+;	main.c:7: P3M0=0;
 	mov	_P3M0,#0x00
-;	main.c:6: P3M1=0;
+;	main.c:8: P3M1=0;
 	mov	_P3M1,#0x00
-;	main.c:7: while(1)
+;	main.c:9: while(1)
 L020002?:
-;	main.c:9: blink();
+;	main.c:11: blink();
 	lcall	_blink
 	sjmp	L020002?
 	rseg R_CSEG

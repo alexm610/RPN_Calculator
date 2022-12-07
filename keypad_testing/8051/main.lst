@@ -1,7 +1,7 @@
 0000              1   ;--------------------------------------------------------
 0000              2   ; File Created by C51
 0000              3   ; Version 1.0.0 #1170 (Feb 16 2022) (MSVC)
-0000              4   ; This file was generated Tue Dec 06 19:00:07 2022
+0000              4   ; This file was generated Tue Dec 06 23:23:05 2022
 0000              5   ;--------------------------------------------------------
                   5   $name main
                   6   $optc51 --model-small
@@ -581,7 +581,7 @@
 0113 D28C       581            setb    _TR0
 0115            582   ;        initialize.h:134: while(TF0==0); //Wait for overflow
 0115            583   L005004?:
-0115 308D50     584            jnb     _TF0,L005004?
+0115 308D70     584            jnb     _TF0,L005004?
 0118 22         585            ret
 0119            586   ;------------------------------------------------------------
 0119            587   ;Allocation info for local variables in function 'waitms'
@@ -610,7 +610,7 @@
 0128            610   ;        initialize.h:142: for (k=0; k<4; k++) wait_us(250);
 0128 7E00       611            mov     r6,#0x00
 012A            612   L006001?:
-012A BE0450     613            cjne    r6,#0x04,L006018?
+012A BE0470     613            cjne    r6,#0x04,L006018?
 012D            614   L006018?:
 012D 5000       615            jnc     L006007?
 012F 7582FA     616            mov     dpl,#0xFA
@@ -630,7 +630,7 @@
 014C            630   L006007?:
 014C            631   ;        initialize.h:141: for(j=0; j<ms; j++)
 014C 0C         632            inc     r4
-014D BC00D0     633            cjne    r4,#0x00,L006005?
+014D BC00F0     633            cjne    r4,#0x00,L006005?
 0150 0D         634            inc     r5
 0151 8000       635            sjmp    L006005?
 0153            636   L006009?:
@@ -790,7 +790,7 @@
 01E9 ACF0       790            mov     r4,b
 01EB            791   ;        initialize.h:205: WriteCommand(line==2?0xc0:0x80);
 01EB 7402       792            mov     a,#0x02
-01ED B5D050     793            cjne    a,_LCDprint_PARM_2,L012013?
+01ED B5F070     793            cjne    a,_LCDprint_PARM_2,L012013?
 01F0 7DC0       794            mov     r5,#0xC0
 01F2 8000       795            sjmp    L012014?
 01F4            796   L012013?:
@@ -837,12 +837,12 @@
 023A D003       837            pop     ar3
 023C D002       838            pop     ar2
 023E 0D         839            inc     r5
-023F BD0050     840            cjne    r5,#0x00,L012003?
+023F BD0070     840            cjne    r5,#0x00,L012003?
 0242 0E         841            inc     r6
 0243 8000       842            sjmp    L012003?
 0245            843   L012006?:
 0245            844   ;        initialize.h:208: if(clear) for(; j<CHARS_PER_LINE; j++) WriteData(' '); // Clear the rest of the line
-0245 30D0D0     845            jnb     _LCDprint_PARM_3,L012011?
+0245 30F0F0     845            jnb     _LCDprint_PARM_3,L012011?
 0248 8D02       846            mov     ar2,r5
 024A 8E03       847            mov     ar3,r6
 024C            848   L012007?:
@@ -860,7 +860,7 @@
 0261 D003       860            pop     ar3
 0263 D002       861            pop     ar2
 0265 0A         862            inc     r2
-0266 BA0050     863            cjne    r2,#0x00,L012007?
+0266 BA0070     863            cjne    r2,#0x00,L012007?
 0269 0B         864            inc     r3
 026A 8000       865            sjmp    L012007?
 026C            866   L012011?:
@@ -1020,7 +1020,7 @@
 0302 ACF0      1020            mov     r4,b
 0304           1021   ;        initialize.h:271: WriteCommand2(line==2?0xc0:0x80);
 0304 7402      1022            mov     a,#0x02
-0306 B550D0    1023            cjne    a,_LCD2print_PARM_2,L018013?
+0306 B570F0    1023            cjne    a,_LCD2print_PARM_2,L018013?
 0309 7DC0      1024            mov     r5,#0xC0
 030B 8000      1025            sjmp    L018014?
 030D           1026   L018013?:
@@ -1067,12 +1067,12 @@
 0353 D003      1067            pop     ar3
 0355 D002      1068            pop     ar2
 0357 0D        1069            inc     r5
-0358 BD00D0    1070            cjne    r5,#0x00,L018003?
+0358 BD00F0    1070            cjne    r5,#0x00,L018003?
 035B 0E        1071            inc     r6
 035C 8000      1072            sjmp    L018003?
 035E           1073   L018006?:
 035E           1074   ;        initialize.h:274: if(clear) for(; j<CHARS_PER_LINE; j++) WriteData2(' '); // Clear the rest of the line
-035E 3050D0    1075            jnb     _LCD2print_PARM_3,L018011?
+035E 3070F0    1075            jnb     _LCD2print_PARM_3,L018011?
 0361 8D02      1076            mov     ar2,r5
 0363 8E03      1077            mov     ar3,r6
 0365           1078   L018007?:
@@ -1090,7 +1090,7 @@
 037A D003      1090            pop     ar3
 037C D002      1091            pop     ar2
 037E 0A        1092            inc     r2
-037F BA0050    1093            cjne    r2,#0x00,L018007?
+037F BA0070    1093            cjne    r2,#0x00,L018007?
 0382 0B        1094            inc     r3
 0383 8000      1095            sjmp    L018007?
 0385           1096   L018011?:
@@ -1122,7 +1122,7 @@
 0397 7D27      1122            mov     r5,#0x27
 0399           1123   L019003?:
 0399 1C        1124            dec     r4
-039A BCFF50    1125            cjne    r4,#0xff,L019017?
+039A BCFF70    1125            cjne    r4,#0xff,L019017?
 039D 1D        1126            dec     r5
 039E           1127   L019017?:
 039E EC        1128            mov     a,r4
@@ -1130,7 +1130,7 @@
 03A0 7000      1130            jnz     L019003?
 03A2           1131   ;        initialize.h:280: for(i=0; i<10000; i++)
 03A2 0A        1132            inc     r2
-03A3 BA00D0    1133            cjne    r2,#0x00,L019004?
+03A3 BA00F0    1133            cjne    r2,#0x00,L019004?
 03A6 0B        1134            inc     r3
 03A7 8000      1135            sjmp    L019004?
 03A9           1136   L019008?:
@@ -1139,18 +1139,18 @@
 03AA           1139   ;Allocation info for local variables in function 'main'
 03AA           1140   ;------------------------------------------------------------
 03AA           1141   ;------------------------------------------------------------
-03AA           1142   ;        main.c:3: void main (void)
+03AA           1142   ;        main.c:5: void main (void)
 03AA           1143   ;        -----------------------------------------
 03AA           1144   ;         function main
 03AA           1145   ;        -----------------------------------------
 03AA           1146   _main:
-03AA           1147   ;        main.c:5: P3M0=0;
+03AA           1147   ;        main.c:7: P3M0=0;
 03AA 75C600    1148            mov     _P3M0,#0x00
-03AD           1149   ;        main.c:6: P3M1=0;
+03AD           1149   ;        main.c:8: P3M1=0;
 03AD 75C700    1150            mov     _P3M1,#0x00
-03B0           1151   ;        main.c:7: while(1)
+03B0           1151   ;        main.c:9: while(1)
 03B0           1152   L020002?:
-03B0           1153   ;        main.c:9: blink();
+03B0           1153   ;        main.c:11: blink();
 03B0 120000    1154            lcall   _blink
 03B3 8000      1155            sjmp    L020002?
 03B5           1156            rseg R_CSEG

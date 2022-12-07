@@ -1,4 +1,6 @@
+#include <at89lp51rd2.h>
 #include "initialize.h"
+#include <stdlib.h>
 
 void main (void)
 {

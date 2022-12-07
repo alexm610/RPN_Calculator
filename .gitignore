@@ -19,3 +19,8 @@ incremental_db/
 simulation/
 output_files/
 .vscode/
+*.asm
+*.lkr
+*.lst
+*.map
+*.obj
