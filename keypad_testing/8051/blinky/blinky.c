@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <at89lp51rd2.h>
-// ~C51~  
+#include "prototypes.h"
 
 void mydelay (void)
 {

@@ -1,7 +1,7 @@
 CC=wine64 c51
 PORTN=/dev/$(shell ls /dev | grep "cu.usbserial")
-DEPS=initialize.h
-OBJS=blinky.obj main.obj
+DEPS=prototypes.h
+OBJS=blinky.obj main.obj initialize.obj
 export WINEDEBUG=-all
 
 default: main.hex
@@ -23,10 +23,14 @@ blinky.obj: blinky.c $(DEPS)
 	$(CC) -c blinky.c
 	@echo "blinky.obj file built..."
 
-loadflash: 
+initialize.obj: initialize.c $(DEPS)
+	$(CC) -c initialize.c 
+	@echo "initialize.obj file built..."
+
+flash: 
 	@echo "Flashing microcontroller..."
 	@echo " "
-	./at89lps -r -p$(PORTN) lab5.hex
+	at89lps -r -p$(PORTN) lab5.hex
 
 clean: 
 	$(RM) blinky.asm blinky.lkr blinky.lst blinky.map blinky.obj blinky.hex
