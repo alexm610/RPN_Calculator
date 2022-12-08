@@ -117,6 +117,7 @@ DECEMBER 8, 2022
 		- with one end of the LED connected to ground: SW high corresponds to LED on
 		- with one end of the LED connected to power: SW high corresponds to LED off
 	- Thus, it makes more sense to always have the LED connected to ground and the GPIO, for simplicity's sake. 
+	- Next step: add to the gpio testing module functionality where the gpio is connected to a push button that turns on the one of the HEX displays.
 
 IDEAS FOR MORE FEATURES:
 	- add registers to hold the most recent operands and have all of that displayed on the HEX display!!
