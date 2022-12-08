@@ -55,7 +55,6 @@ const char* key_actual(int number)
         case 0x5: return "5"; break;
         case 0x6: return "6"; break;
         case 0x7: return "7"; break;
-
         case 0x8: return "8"; break;
         case 0x9: return "9"; break;
         case 0xA: return "A"; break;

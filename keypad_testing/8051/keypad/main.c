@@ -4,11 +4,21 @@
 
 void main (void)
 {
-    char* key = "n";
+    unsigned char i = 0;
+    const char* key = "n";
+
     LCD_4BIT();
-    LCDprint("keypad:    ", 1, 1);
+    LCDprint("keypad:    ", 0x80, 1);
+
     while (1) {
         key = key_actual(switch_press_scan());
-        LCDprint(key, 2, 1);
+        LCDprint(key, 0xc0 + i, 1);
+
+        if (i == 15) {
+            LCDprint(key_actual(switch_press_scan()), 0xc0, 1);
+            LCDprint("                ", 0xc1, 1);
+            i = 0;
+        }
+        i++;
     }
 }
