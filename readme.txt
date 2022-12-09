@@ -110,6 +110,15 @@ DECEMBER 2, 2022
 	- Will now attempt to write code that converts a 4-bit binary value to hexadecimal value, as to display the calculated output onto the HEX display
 	- Increase output put bus width to account for calculation output values larger than 8 bits!
 
+DECEMBER 8, 2022
+	- I've created a keypad-testing folder; it contains a directory for an 8051 microcontroller, and my DE1-Soc. 
+		- A keypad interface for an 16x2 LCD via my 8051 atmel microcontroller was just completed. Keypad characters are shown on the screen one after the other on the LCD upon a button press.
+	- GPIO testing file works; some notes:
+		- with one end of the LED connected to ground: SW high corresponds to LED on
+		- with one end of the LED connected to power: SW high corresponds to LED off
+	- Thus, it makes more sense to always have the LED connected to ground and the GPIO, for simplicity's sake. 
+	- Next step: add to the gpio testing module functionality where the gpio is connected to a push button that turns on the one of the HEX displays.
+
 IDEAS FOR MORE FEATURES:
 	- add registers to hold the most recent operands and have all of that displayed on the HEX display!!
 		left two HEXs for the first operand, middle two for the second, and the rightmost two HEXs for the output
