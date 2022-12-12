@@ -119,6 +119,14 @@ DECEMBER 8, 2022
 	- Thus, it makes more sense to always have the LED connected to ground and the GPIO, for simplicity's sake. 
 	- Next step: add to the gpio testing module functionality where the gpio is connected to a push button that turns on the one of the HEX displays.
 
+DECEMBER 9, 2022
+	- New idea: put all current RPN files into a "version_1" folder: this is for the original circuit that operates on the FPGA only, no outside circuitry 
+		(such as a keypad)
+	- Create a new folder "version_2" for the RPN calculator you will build with key pad functionality
+		- Basic functionality: when a key on keypad is pressed, the module waits for the key to be released and then it pushed key value onto stack
+		- when the user is ready to run a calculation, KEY[0] is pressed, and the value on the switches will be the operator input
+
+
 IDEAS FOR MORE FEATURES:
 	- add registers to hold the most recent operands and have all of that displayed on the HEX display!!
 		left two HEXs for the first operand, middle two for the second, and the rightmost two HEXs for the output
